@@ -1,9 +1,9 @@
-import SingIn from "./components/SingIn";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <SingIn />
+      <Header />
     </div>
   );
 }
