@@ -9,7 +9,6 @@ const SingIn = () => {
                 <input type="text" name="password" id="password" /><br />
             </form>
             <input type="button" value={"Sing In"} />
-            <a href="">Forgot Your Password?</a>
         </div>
     );
 }
