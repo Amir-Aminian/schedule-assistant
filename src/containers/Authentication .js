@@ -1,7 +1,7 @@
 import { useState } from "react";
-import SingIn from "./SingIn";
-import SingUp from "./SingUp";
-import ForgotPassword from "./ForgotPassword";
+import SingIn from "../components/SingIn";
+import SingUp from "../components/SingUp";
+import ForgotPassword from "../components/ForgotPassword";
 
 const Header = () => {
   const [tab, setTab] = useState (SingIn);
@@ -10,8 +10,8 @@ const Header = () => {
       <h1>Couple Assistant</h1>
       <button className="singIn" onClick={() => setTab(SingIn)}>Sing In</button>
       <button className="singUp" onClick={() => setTab(SingUp)}>Sing Up</button>
+      <button className="forgotPassword" onClick={() => setTab(ForgotPassword)}>Forgto Your Password?</button>
       {tab}
-      <button className="forgotPassword" onClick={() => setTab(ForgotPassword)}>Forgot Your Password?</button>
     </div>
   );
 }
