@@ -3,17 +3,23 @@ import SingIn from "../components/SingIn";
 import SingUp from "../components/SingUp";
 import ForgotPassword from "../components/ForgotPassword";
 
-const Header = () => {
-  const [tab, setTab] = useState (SingIn);
+const Authentication = () => {
+  const singIn = <button key={"singIn"} className="singIn" onClick={() => setTab([singIn, singUp, <SingIn key={"SingIn"} />, forgotPasswordLink])}>Sing In</button>;
+
+  const singUp = <button key={"singUp"} className="singUp" onClick={() => setTab([singIn, singUp, <SingUp key={"SingUp"} />, singInLink])}>Sing Up</button>;
+
+  const forgotPasswordLink = <button key={"forgotPasswordLink"} className="forgotPasswordLink" onClick={() => setTab([<ForgotPassword key={"ForgotPassword"} />, singIn])}>Forgto Your Password?</button>;
+
+  const singInLink = <button key={"singInLink"} className="singInLink" onClick={() => setTab([singIn, singUp, <SingIn key={"SingInLink"} />, forgotPasswordLink])}>Already Have An Account? Sing In</button>;
+
+  const [tab, setTab] = useState ([singIn, singUp, <SingIn key={"initialSingIn"} />, forgotPasswordLink]);
+  
   return (
-    <div className="header">
+    <div className="authentication">
       <h1>Couple Assistant</h1>
-      <button className="singIn" onClick={() => setTab(SingIn)}>Sing In</button>
-      <button className="singUp" onClick={() => setTab(SingUp)}>Sing Up</button>
-      <button className="forgotPassword" onClick={() => setTab(ForgotPassword)}>Forgto Your Password?</button>
       {tab}
     </div>
   );
 }
-  
-export default Header;
+
+export default Authentication;

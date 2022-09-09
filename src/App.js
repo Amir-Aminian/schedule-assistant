@@ -1,9 +1,9 @@
-import Header from "./containers/Authentication ";
+import Authentication from "./containers/Authentication ";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Authentication />
     </div>
   );
 }
