@@ -1,32 +1,14 @@
 import InputForm from "./forms/InputForm";
 
 const ForgotPassword = () => {
-    const fields = [
-        {
-            id: 1,
-            text: "First Question?",
-            type: "text",
-            name: "firstQuestion"
-        },
-        {
-            id: 2,
-            text: "Second Question?",
-            type: "text",
-            name: "secondQuestion"
-        },
-        {
-            id: 3,
-            text: "Third Question?",
-            type: "text",
-            name: "thirdQuestion"
-        }
-    ];
-
     return (
-        <>
-            <InputForm className={"forgotPassword"} title={"Forgot Your Password?"} label={fields}/>
+        <div className="forgotPassword">
+            <h3>Forgot Your Password?</h3>
+            <InputForm type="text" nameId="firsQuestion" text="First Question?" />
+            <InputForm type="text" nameId="secondQuestion" text="Second Question?" />
+            <InputForm type="text" nameId="thirdQuestion" text="Third Question?" />
             <input type="button" value={"Submit"} />
-        </>
+        </div>
     );
 }
 

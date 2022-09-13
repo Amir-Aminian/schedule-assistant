@@ -2,26 +2,13 @@ import InputForm from "./forms/InputForm";
 
 
 const SingIn = () => {
-    const fields = [
-        {
-            id: 1,
-            text: "Username:",
-            type: "text",
-            name: "username"
-        },
-        {
-            id: 2,
-            text: "Password:",
-            type: "text",
-            name: "password"
-        }
-    ];
-
     return (
-        <>
-            <InputForm className={"singIn"} title={"Sing In"} label={fields} />
+        <div className="singIn">
+            <h3>Sing In</h3>
+            <InputForm type="text" nameId="username" text="Username:" />
+            <InputForm type="text" nameId="password" text="Password:" />
             <input type="button" value={"Sing In"} />
-        </>
+        </div>
     );
 }
 

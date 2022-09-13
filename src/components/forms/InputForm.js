@@ -1,17 +1,9 @@
-const InputForm = ({ className, title, label }) => {
+const InputForm = ({ type, nameId, text }) => {
     return (
-        <div className={className}>
-            <h3>{title}</h3>
-            <form>
-                {label.map((field) => (
-                    <div key={field.id}>
-                        <label>{field.text}</label>
-                        <input type={field.type} name={field.name} id={field.name} />
-                        <br />
-                    </div>
-                ))}
-            </form>
-        </div>
+        <form className={nameId}>
+            <label>{text}</label>
+            <input type={type} name={nameId} id={nameId} />
+        </form>
     )
 }
 
