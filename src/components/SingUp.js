@@ -15,7 +15,7 @@ const SingUp = () => {
     ]
 
     return (
-        <div className="singUp">
+        <form className="singUp">
             <h3>Sing Up</h3>
             <InputForm type="text" nameId="username" text="Username:" />
             <InputForm type="text" nameId="emailAddress" text="Email Address:" />
@@ -23,7 +23,7 @@ const SingUp = () => {
             <InputForm type="text" nameId="confirmPassword" text="Confirm Password:" />
             <DropDownInputForm className={"securityQuestions"} title={"Security Questions"} text={"Select a security question. This question will help us verify your identity should you forget your password."} lists={list} />
             <input type="button" value={"Sing Up"} />
-        </div>
+        </form>
     );
 }
 
