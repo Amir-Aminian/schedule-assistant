@@ -1,10 +1,13 @@
-const InputForm = ({ type, nameId, text }) => {
+import { forwardRef } from "react";
+
+const InputForm = ({ type, nameId, text }, ref) => {
+
     return (
         <div>
             <label htmlFor={nameId}>{text}</label>
-            <input type={type} name={nameId} id={nameId} />
+            <input type={type} ref={ref} name={nameId} id={nameId} />
         </div>
     )
 }
 
-export default InputForm;
+export default forwardRef(InputForm);
