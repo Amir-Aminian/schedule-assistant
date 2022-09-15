@@ -7,10 +7,10 @@ const SingIn = () => {
     const passwordRef = useRef();
 
     const submit = () => {
-        console.log([
-            usernameRef.current.value,
-            passwordRef.current.value
-        ]);
+        console.log({
+            username: usernameRef.current.value,
+            password: passwordRef.current.value
+        });
     }
 
     return (
