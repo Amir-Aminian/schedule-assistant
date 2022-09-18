@@ -1,10 +1,10 @@
-const DropDownForm = ({ list }) => {
+const DropDownForm = ({ id, name, label, options }) => {
     return (
         <div>
-            <label htmlFor={list.name}>{list.label}</label>
-            <select name={list.name}>
-                {list.options.map((option) => (
-                    <option key={option + list.id} value={option}>{option}</option>
+            <label htmlFor={name}>{label}</label>
+            <select name={name}>
+                {options.map((option) => (
+                    <option key={option + id} value={option}>{option}</option>
                 ))}
             </select>
         </div>
