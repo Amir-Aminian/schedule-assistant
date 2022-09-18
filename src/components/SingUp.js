@@ -2,7 +2,7 @@ import InputForm from "./forms/InputForm";
 import DropDownForm from "./forms/DropDownInputForm";
 
 const SingUp = () => {
-    const securityQuestions = ["Please Select", "In what city were you born?", "What is the name of your favorite pet?", "What is your mother's maiden name?", "What high school did you attend?", "What was the name of your elementary school?", "What was the make of your first car?", "What was your favorite food as a child?", "Where did you meet your spouse?", "What year was your father (or mother) born?"]
+    const securityQuestions = ["Please Select", "In what city were you born?", "What is the name of your favorite pet?", "What is your mother's maiden name?", "What high school did you attend?", "What was the name of your elementary school?", "What was the make of your first car?", "What was your favorite food as a child?", "Where did you meet your spouse?", "What year was your father (or mother) born?"];
 
     return (
         <form className="singUp">
