@@ -1,5 +1,5 @@
-import InputForm from "./forms/InputForm";
-import DropDownForm from "./forms/DropDownInputForm";
+import InputForm from "../forms/InputForm";
+import DropDownForm from "../forms/DropDownInputForm";
 import { Link } from "react-router-dom";
 
 const SingUp = () => {

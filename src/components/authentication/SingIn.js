@@ -1,4 +1,4 @@
-import InputForm from "./forms/InputForm";
+import InputForm from "../forms/InputForm";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 

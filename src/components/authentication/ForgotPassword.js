@@ -1,4 +1,4 @@
-import InputForm from "./forms/InputForm";
+import InputForm from "../forms/InputForm";
 
 const ForgotPassword = () => {
     return (
