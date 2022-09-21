@@ -11,9 +11,10 @@ const Authentication = () => {
     <BrowserRouter>
       <AuthenticationNavBar />
       <Routes>        
-        <Route exact path="/" element={<SingIn />} />
+        <Route path="/" element={<SingIn />} />
         <Route path="singUp" element={<SingUp />} />
-        <Route path="forgotPassword" element={<ForgotPassword />}/>
+        <Route path="forgotPassword" element={<ForgotPassword />} />
+        <Route path="*" element={<h1>ERROR 404</h1>} />
       </Routes>
     </BrowserRouter>
   );
