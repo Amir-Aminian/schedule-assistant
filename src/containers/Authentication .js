@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthenticationNavBar from "../components/Authentication/AuthenticationNavBar";
-import SingIn from "../components/Authentication/SingIn";
-import SingUp from "../components/Authentication/SingUp";
-import ForgotPassword from "../components/Authentication/ForgotPassword";
+import AuthenticationNavBar from "../components/authentication/AuthenticationNavBar";
+import SingIn from "../components/authentication/SingIn";
+import SingUp from "../components/authentication/SingUp";
+import ForgotPassword from "../components/authentication/ForgotPassword";
 
 
 
