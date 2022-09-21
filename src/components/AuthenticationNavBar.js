@@ -13,13 +13,6 @@ const AuthenticationNavBar =() => {
                     </li>
                 </ul>
             </nav>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
-                    </li>
-                </ul>
-            </nav>
         </>
     );
 }
