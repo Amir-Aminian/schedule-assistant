@@ -19,7 +19,7 @@ const SingIn = () => {
             <form className="singIn" >
                 <h2>Sing In</h2>
                 <InputForm type="text" ref={usernameRef} nameId="username" text="Username:" />
-                <InputForm type="text" ref={passwordRef} nameId="password" text="Password:" />
+                <InputForm type="password" ref={passwordRef} nameId="password" text="Password:" />
                 <input type="button" onClick={submit} value={"Sing In"} />
             </form>
             <nav>

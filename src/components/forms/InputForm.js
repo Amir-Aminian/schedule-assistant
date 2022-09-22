@@ -1,11 +1,11 @@
 import { forwardRef } from "react";
+import { InputLabel, TextField } from '@mui/material';
 
-const InputForm = ({ type, nameId, text }, ref) => {
-
+const InputForm = ({ type, nameId, text, props }, ref) => {
     return (
         <div>
-            <label htmlFor={nameId}>{text}</label>
-            <input type={type} ref={ref} name={nameId} id={nameId} />
+            <InputLabel htmlFor={nameId}>{text}</InputLabel>
+            <TextField type={type} ref={ref} name={nameId} id={nameId} props />
         </div>
     )
 }
