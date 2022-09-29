@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthenticationNavBar from "../components/authentication/AuthenticationNavBar";
+import NavigationBar from "../components/authentication/NavigationBar";
 import SingIn from "../components/authentication/SingIn";
 import SingUp from "../components/authentication/SingUp";
 import ForgotPassword from "../components/authentication/ForgotPassword";
@@ -9,7 +9,7 @@ import ForgotPassword from "../components/authentication/ForgotPassword";
 const Authentication = () => {
   return (
     <BrowserRouter>
-      <AuthenticationNavBar />
+      <NavigationBar />
       <Routes>        
         <Route path="/" element={<SingIn />} />
         <Route path="singUp" element={<SingUp />} />

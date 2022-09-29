@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const AuthenticationNavBar =() => {
+const NavigationBar =() => {
     return (
         <>
             <nav>
@@ -17,4 +17,4 @@ const AuthenticationNavBar =() => {
     );
 }
 
-export default AuthenticationNavBar;
+export default NavigationBar;
