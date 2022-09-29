@@ -1,13 +1,17 @@
-const DropDownForm = ({ id, name, label, options }) => {
+import { Select, MenuItem, FormControl, Grid, InputLabel } from "@mui/material";
+
+const DropDownForm = ({ id, label, options }) => {
     return (
-        <div>
-            <label htmlFor={name}>{label}</label>
-            <select name={name}>
-                {options.map((option) => (
-                    <option key={option + id} value={option}>{option}</option>
-                ))}
-            </select>
-        </div>
+        <Grid container justifyContent="center">
+            <FormControl fullWidth>
+                <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
+                <Select id={id} labelId={id+"Label"}>
+                    {options.map((option) => (
+                        <MenuItem key={option + id} value={option}>{option}</MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </Grid>
     );
 }
 
