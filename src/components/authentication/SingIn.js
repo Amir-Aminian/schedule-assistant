@@ -1,35 +1,26 @@
 import InputForm from "../forms/InputForm";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Button, Grid } from "@mui/material";
 
 const SingIn = () => {
-    const usernameRef = useRef();
-
-    const passwordRef = useRef();
-
-    const submit = () => {
-        console.log({
-            username: usernameRef.current.value,
-            password: passwordRef.current.value
-        });
-    }
-
     return (
-        <>
-            <form className="singIn" >
+        <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
+            <Grid item>
                 <h2>Sing In</h2>
-                <InputForm type="text" ref={usernameRef} nameId="username" text="Username:" />
-                <InputForm type="password" ref={passwordRef} nameId="password" text="Password:" />
-                <input type="button" onClick={submit} value={"Sing In"} />
-            </form>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
-                    </li>
-                </ul>
-            </nav>
-        </>
+            </Grid>
+            <Grid item>
+                <InputForm type="text" id="username" text="Username:" />
+            </Grid>
+            <Grid item>
+                <InputForm type="password" id="password" text="Password:" />
+            </Grid>
+            <Grid item>
+                <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
+            </Grid>
+            <Grid item>
+                <Button variant="contained" size="small" onClick={() => alert()}>Sing In</Button>
+            </Grid>
+        </Grid>
     );
 }
 
