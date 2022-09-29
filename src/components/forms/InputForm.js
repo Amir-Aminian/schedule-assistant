@@ -1,13 +1,12 @@
-import { forwardRef } from "react";
-import { InputLabel, TextField } from '@mui/material';
+import { InputLabel, TextField, Grid } from '@mui/material';
 
-const InputForm = ({ type, nameId, text }, ref) => {
+const InputForm = ({ type, id, text }) => {
     return (
-        <div>
-            <InputLabel htmlFor={nameId}>{text}</InputLabel>
-            <TextField type={type} ref={ref} name={nameId} id={nameId} variant="filled" />
-        </div>
+        <Grid container direction="row" alignItems="center" justifyContent="center">
+            <InputLabel htmlFor={id}>{text}</InputLabel>
+            <TextField type={type} id={id} variant="filled" size="small" hiddenLabel />
+        </Grid>
     )
 }
 
-export default forwardRef(InputForm);
+export default InputForm;
