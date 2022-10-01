@@ -8,12 +8,8 @@ const SingIn = () => {
             <Grid item>
                 <h2>Sing In</h2>
             </Grid>
-            <Grid item>
-                <InputForm type="text" id="username" text="Username:" />
-            </Grid>
-            <Grid item>
-                <InputForm type="password" id="password" text="Password:" />
-            </Grid>
+            <InputForm type="text" id="username" label="Username" />
+            <InputForm type="password" id="password" label="Password" />
             <Grid item>
                 <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
             </Grid>

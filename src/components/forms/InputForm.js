@@ -1,10 +1,9 @@
-import { InputLabel, TextField, Grid } from '@mui/material';
+import { TextField, Grid } from '@mui/material';
 
-const InputForm = ({ type, id, text }) => {
+const InputForm = ({ type, id, label }) => {
     return (
-        <Grid container direction="row" alignItems="center" justifyContent="center">
-            <InputLabel htmlFor={id}>{text}</InputLabel>
-            <TextField type={type} id={id} variant="filled" size="small" hiddenLabel />
+        <Grid item>
+            <TextField type={type} id={id} label={label} variant="filled" size="small" />
         </Grid>
     )
 }
