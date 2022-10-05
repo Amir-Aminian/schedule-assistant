@@ -2,10 +2,10 @@ import { Select, MenuItem, FormControl, Grid, InputLabel } from "@mui/material";
 
 const DropDownForm = ({ id, label, options }) => {
     return (
-        <Grid item>
-            <FormControl size="small">
+        <Grid container item>
+            <FormControl fullWidth size="small">
                 <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
-                <Select id={id} labelId={id+"Label"}>
+                <Select id={id} labelId={id+"Label"} label={label}>
                     {options.map((option) => (
                         <MenuItem key={option + id} value={option}>{option}</MenuItem>
                     ))}
