@@ -5,7 +5,7 @@ const ForgotPassword = () => {
     return (
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
-                <h2>Forgot Your Password</h2>
+                <h2>Forgot Your Password?</h2>
             </Grid>
             <InputForm type="text" id="firsQuestion" label="Answer the first question" />
             <InputForm type="text" id="secondQuestion" label="Answer the second question" />
