@@ -6,7 +6,7 @@ import NavigationBar from "./NavigationBar";
 const SingIn = () => {
     return (
         <Box>
-        <NavigationBar />
+        <NavigationBar tabIndex={0} />
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
                 <h2>Sing In</h2>

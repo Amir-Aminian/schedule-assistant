@@ -9,7 +9,7 @@ const SingUp = () => {
 
     return (
         <Box>
-        <NavigationBar />
+        <NavigationBar tabIndex={1} />
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
                 <h2>Sing Up</h2>
