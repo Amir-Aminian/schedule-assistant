@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 
 const NavigationBar =({ tabIndex }) => {
     return (
-        <Box borderBottom={1} borderColor="divider">
-            <Grid container direction="row" alignItems="center" justifyContent="center" >
-                <Tabs value={tabIndex}>
-                    <Tab component={Link} to={"/"} label="Sing In" />
-                    <Tab component={Link} to={"/singUp"} label="Sing Up" />
-                </Tabs>
-            </Grid>
-        </Box>
+        <Grid container direction="row" alignItems="center" justifyContent="center" borderBottom={1} borderColor="divider">
+            <Tabs value={tabIndex}>
+                <Tab component={Link} to={"/"} label="Sing In" />
+                <Tab component={Link} to={"/singUp"} label="Sing Up" />
+            </Tabs>
+        </Grid>
     );
 }
 
