@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 
-const SingUp = () => {
+const SignUp = () => {
     const securityQuestions = ["In what city were you born?", "What is the name of your favorite pet?", "What is your mother's maiden name?", "What high school did you attend?", "What was the name of your elementary school?", "What was the make of your first car?", "What was your favorite food as a child?", "Where did you meet your spouse?", "What year was your father (or mother) born?"];
 
     return (
@@ -12,7 +12,7 @@ const SingUp = () => {
         <NavigationBar tabIndex={1} />
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
-                <h2>Sing Up</h2>
+                <h2>Sign Up</h2>
             </Grid>
             <InputForm type="text" id="username" label="Username" />
             <InputForm type="text" id="emailAddress" label="Email Address" />
@@ -31,14 +31,14 @@ const SingUp = () => {
             <DropDownForm id={3} label={"Select third security question"} options={securityQuestions} />
             <InputForm type="text" id="thirdSecurityAnswer" label="Answer third security question" />
             <Grid item>
-                <Link to={"/"}>Already have an account? Sing In</Link>
+                <Link to={"/"}>Already have an account? Sign In</Link>
             </Grid>
             <Grid item>
-                <Button variant="contained" size="small" onClick={() => alert()}>Sing Up</Button>
+                <Button variant="contained" size="small" onClick={() => alert()}>Sign Up</Button>
             </Grid>           
         </Grid>
         </Box>
     );
 }
 
-export default SingUp;
+export default SignUp;

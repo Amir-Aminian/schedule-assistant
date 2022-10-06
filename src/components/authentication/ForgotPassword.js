@@ -8,6 +8,9 @@ const ForgotPassword = () => {
             <Grid item>
                 <h2>Forgot Your Password?</h2>
             </Grid>
+            <Grid item>
+                <p>Please answer these three security questions to retrive your password.</p>
+            </Grid>
             <InputForm type="text" id="firsQuestion" label="Answer the first question" />
             <InputForm type="text" id="secondQuestion" label="Answer the second question" />
             <InputForm type="text" id="thirdQuestion" label="Answer the third question" />

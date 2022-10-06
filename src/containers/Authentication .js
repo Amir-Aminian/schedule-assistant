@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SingIn from "../components/authentication/SingIn";
-import SingUp from "../components/authentication/SingUp";
+import SignIn from "../components/authentication/SignIn";
+import SignUp from "../components/authentication/SignUp";
 import ForgotPassword from "../components/authentication/ForgotPassword";
 import { Container } from "@mui/material";
 
@@ -11,8 +11,8 @@ const Authentication = () => {
     <Container maxWidth="xs">
       <BrowserRouter>
         <Routes>        
-          <Route path="/" element={<SingIn />} />
-          <Route path="singUp" element={<SingUp />} />
+          <Route path="/" element={<SignIn />} />
+          <Route path="singUp" element={<SignUp />} />
           <Route path="forgotPassword" element={<ForgotPassword />} />
           <Route path="*" element={<h1>ERROR 404</h1>} />
         </Routes>
