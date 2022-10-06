@@ -8,7 +8,7 @@ import { Container } from "@mui/material";
 
 const Authentication = () => {
   return (
-    <Container maxWidth="xs" sx={{mt: 10 , mb: 10}}>
+    <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white"}}>
       <BrowserRouter>
         <Routes>        
           <Route path="/" element={<SignIn />} />
