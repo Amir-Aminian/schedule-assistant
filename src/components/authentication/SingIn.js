@@ -1,9 +1,12 @@
 import InputForm from "../forms/InputForm";
 import { Link } from "react-router-dom";
-import { Button, Grid } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
+import NavigationBar from "./NavigationBar";
 
 const SingIn = () => {
     return (
+        <Box>
+        <NavigationBar />
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
                 <h2>Sing In</h2>
@@ -17,6 +20,7 @@ const SingIn = () => {
                 <Button variant="contained" size="small" onClick={() => alert()}>Sing In</Button>
             </Grid>
         </Grid>
+        </Box>
     );
 }
 

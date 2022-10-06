@@ -9,7 +9,6 @@ import ForgotPassword from "../components/authentication/ForgotPassword";
 const Authentication = () => {
   return (
     <BrowserRouter>
-      <NavigationBar />
       <Routes>        
         <Route path="/" element={<SingIn />} />
         <Route path="singUp" element={<SingUp />} />

@@ -1,4 +1,5 @@
 import { Button, Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 import InputForm from "../forms/InputForm";
 
 const ForgotPassword = () => {
@@ -12,6 +13,9 @@ const ForgotPassword = () => {
             <InputForm type="text" id="thirdQuestion" label="Answer the third question" />
             <Grid item>
                 <Button variant="contained" size="small" onClick={() => alert()}>Submit</Button>
+            </Grid>
+            <Grid item>
+                <Link to={"/"}>Back to Sign In page</Link>
             </Grid>
         </Grid>
     );
