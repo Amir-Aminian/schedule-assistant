@@ -1,11 +1,12 @@
 import { Select, MenuItem, FormControl, Grid, InputLabel } from "@mui/material";
+import { forwardRef } from 'react';
 
-const DropDownForm = ({ id, label, options }) => {
+const DropDownForm = ({ id, label, options }, ref) => {
     return (
         <Grid container item>
             <FormControl fullWidth size="small">
                 <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
-                <Select id={id} labelId={id+"Label"} label={label}>
+                <Select id={id} labelId={id+"Label"} label={label} inputRef={ref}>
                     {options.map((option) => (
                         <MenuItem key={option + id} value={option}>{option}</MenuItem>
                     ))}
@@ -15,4 +16,4 @@ const DropDownForm = ({ id, label, options }) => {
     );
 }
 
-export default DropDownForm;
+export default forwardRef(DropDownForm);
