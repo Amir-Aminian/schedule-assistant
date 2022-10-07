@@ -1,6 +1,6 @@
 import InputForm from "../forms/InputForm";
 import DropDownForm from "../forms/DropDownInputForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import Register from "../../utilities/Register";
@@ -27,7 +27,10 @@ const SignUp = () => {
 
     const SA3Ref = useRef();
 
-    const getData = () => {
+    const navigate = useNavigate();
+
+
+    const handleSubmit = () => {
         const userData={
             username: usernameRef.current.value,
             emailAddress: emailAddressRef.current.value,
@@ -41,7 +44,8 @@ const SignUp = () => {
             SA3: SA3Ref.current.value
         };
 
-        return(userData);
+        Register(userData);
+        navigate("/");
     };
 
     const securityQuestions = ["In what city were you born?", "What is the name of your favorite pet?", "What is your mother's maiden name?", "What high school did you attend?", "What was the name of your elementary school?", "What was the make of your first car?", "What was your favorite food as a child?", "Where did you meet your spouse?", "What year was your father (or mother) born?"];
@@ -73,7 +77,7 @@ const SignUp = () => {
                 <Link to={"/"}>Already have an account? Sign In</Link>
             </Grid>
             <Grid item>
-                <Button variant="contained" size="small" onClick={() => Register(getData())}>Sign Up</Button>
+                <Button variant="contained" size="small" onClick={handleSubmit}>Sign Up</Button>
             </Grid>           
         </Grid>
         </Box>
