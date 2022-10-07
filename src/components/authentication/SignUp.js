@@ -55,8 +55,8 @@ const SignUp = () => {
             </Grid>
             <InputForm type="text" id="username" label="Username" ref={usernameRef} />
             <InputForm type="text" id="emailAddress" label="Email Address" ref={emailAddressRef} />
-            <InputForm type="text" id="password" label="Password" ref={passwordRef} />
-            <InputForm type="text" id="confirmPassword" label="Confirm Password" ref={confirmPasswordRef} />
+            <InputForm type="password" id="password" label="Password" ref={passwordRef} />
+            <InputForm type="password" id="confirmPassword" label="Confirm Password" ref={confirmPasswordRef} />
             <Grid item>
                 <h3>Security Questions</h3>
             </Grid>

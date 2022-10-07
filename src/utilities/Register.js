@@ -2,7 +2,7 @@ let userDataBase=[];
 
 const Register = (newUser) => {
     userDataBase.push(newUser);
-    console.log(userDataBase);
+    localStorage.setItem("userDataBase", JSON.stringify(userDataBase));
 }
 
 export default Register;
