@@ -1,38 +1,39 @@
 import InputForm from "../forms/InputForm";
 import { Link } from "react-router-dom";
-import { Box, Button, Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
-import { useRef } from "react";
+import { useForm } from "react-hook-form";
 
 const SignIn = () => {
-    const usernameRef = useRef();
-
-    const passwordRef = useRef();
-
-    const signIn = () => {
-        console.log({
-            username: usernameRef.current.value,
-            password: passwordRef.current.value
-        })
+    const { control, handleSubmit } = useForm();
+    
+    const onSubmit = (data) => {
+        console.log(data);
     };
 
     return (
-        <Box>
-        <NavigationBar tabIndex={0} />
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
+            <Grid item>
+                <NavigationBar tabIndex={0} />
+            </Grid>
             <Grid item>
                 <h2>Sign In</h2>
             </Grid>
-            <InputForm type="text" id="username" label="Username" ref={usernameRef} />
-            <InputForm type="password" id="password" label="Password" ref={passwordRef} />
             <Grid item>
-                <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
-            </Grid>
-            <Grid item>
-                <Button variant="contained" size="small" onClick={signIn}>Sign In</Button>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
+                        <InputForm type="text" id="username" label="Username" control={control} />
+                        <InputForm type="password" id="password" label="Password" control={control} />
+                        <Grid container item justifyContent="flex-end">
+                            <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
+                        </Grid>
+                        <Grid item>
+                            <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Sign In</Button>
+                        </Grid>
+                    </Grid>
+                </form>
             </Grid>
         </Grid>
-        </Box>
     );
 }
 

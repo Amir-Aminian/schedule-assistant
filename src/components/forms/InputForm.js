@@ -1,12 +1,19 @@
 import { TextField, Grid } from '@mui/material';
-import { forwardRef } from 'react';
+import { Controller } from 'react-hook-form';
 
-const InputForm = ({ type, id, label }, ref) => {
+const InputForm = ({ type, id, label, control }) => {
     return (
-        <Grid container item>
-            <TextField type={type} id={id} label={label} inputRef={ref} variant="filled" size="small" fullWidth />
+        <Grid item>
+            <Controller
+                name={id}
+                control={control}
+                defaultValue=""
+                render={({field:{onChange, value}}) => (
+                    <TextField type={type} id={id} label={label} onChange={onChange} value={value} variant="filled" size="small" fullWidth />
+                )}
+            />
         </Grid>
-    )
+    );
 }
 
-export default forwardRef(InputForm);
+export default InputForm;
