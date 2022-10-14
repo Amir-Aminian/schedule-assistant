@@ -7,7 +7,7 @@ import Register from "../../utilities/Register";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
-    const { control, handleSubmit } = useForm();
+    const { control, handleSubmit, watch } = useForm();
 
     const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const SignUp = () => {
                                 <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
                                 <InputForm type="email" id="emailAddress" label="Email Address" control={control} rules={{required: "This field is required"}} />
                                 <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} />
-                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", validate: (value) => (value===watch("password") || "Passwords does not match")}} />
                             </Grid>
                             <Grid item>
                                 <h3>Security Questions</h3>
