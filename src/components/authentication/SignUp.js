@@ -29,38 +29,36 @@ const SignUp = () => {
                 </Grid>
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
-                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
-                            <InputForm type="text" id="username" label="Username" control={control} />
-                            <InputForm type="text" id="emailAddress" label="Email Address" control={control} />
-                            <InputForm type="password" id="password" label="Password" control={control} />
-                            <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} />
-                        </Grid>
-                    </form>
-                </Grid>
-                <Grid item>
-                    <h3>Security Questions</h3>
-                </Grid>
-                <Grid item>
-                    <p>Select and answer three security questions. These questions will help us verify your identity should you forget your password.</p>
-                </Grid>
-                <Grid item>
-                    <form onSubmit={handleSubmit(submit)}>
-                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={400}>
-                            <DropDownForm id="SQ1" label={"Select first security question"} options={securityQuestions} control={control} />
-                            <InputForm type="text" id="SA1" label="Answer first security question" control={control} />
-                            <DropDownForm id="SQ2" label={"Select second security question"} options={securityQuestions} control={control} />
-                            <InputForm type="text" id="SA2" label="Answer second security question" control={control} />
-                            <DropDownForm id="SQ3" label={"Select third security question"} options={securityQuestions} control={control} />
-                            <InputForm type="text" id="SA3" label="Answer third security question" control={control} />
-                            <Grid container item justifyContent="flex-end">
-                                <Link to={"/"}>Already have an account? Sign In</Link>
+                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
+                            <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
+                                <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="email" id="emailAddress" label="Email Address" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required"}} />
                             </Grid>
                             <Grid item>
-                                <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Sign Up</Button>
+                                <h3>Security Questions</h3>
+                            </Grid>
+                            <Grid item>
+                                <p>Select and answer three security questions. These questions will help us verify your identity should you forget your password.</p>
+                            </Grid>
+                            <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={400}>
+                                <DropDownForm id="SQ1" label={"Select first security question"} options={securityQuestions} control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} />
+                                <DropDownForm id="SQ2" label={"Select second security question"} options={securityQuestions} control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="text" id="SA2" label="Answer second security question" control={control} rules={{required: "This field is required"}} />
+                                <DropDownForm id="SQ3" label={"Select third security question"} options={securityQuestions} control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} />
+                                <Grid container item justifyContent="flex-end">
+                                    <Link to={"/"}>Already have an account? Sign In</Link>
+                                </Grid>
+                                <Grid item>
+                                    <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Sign Up</Button>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </form>
-                </Grid>          
+                </Grid>  
             </Grid>
         </Box>
     );

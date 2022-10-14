@@ -1,21 +1,23 @@
-import { Select, MenuItem, FormControl, Grid, InputLabel } from "@mui/material";
+import { Select, MenuItem, FormControl, Grid, InputLabel, FormHelperText } from "@mui/material";
 import { Controller } from "react-hook-form";
 
-const DropDownForm = ({ id, label, options, control }) => {
+const DropDownForm = ({ id, label, options, control, rules }) => {
     return (
         <Grid container item>
             <Controller
                 name={id}
                 control={control}
+                rules={rules}
                 defaultValue=""
-                render={({field:{onChange, value}}) => (
+                render={({field:{onChange, value}, fieldState:{error}}) => (
                     <FormControl fullWidth size="small">
                         <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
-                        <Select id={id} labelId={id+"Label"} label={label} onChange={onChange} value={value}>
+                        <Select id={id} labelId={id+"Label"} label={label} onChange={onChange} value={value} error={!!error}>
                             {options.map((option) => (
                                 <MenuItem key={option + id} value={option}>{option}</MenuItem>
                             ))}
                         </Select>
+                        <FormHelperText error>{error ? error.message : null}</FormHelperText>
                     </FormControl>
                 )}
                 />
