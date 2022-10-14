@@ -8,7 +8,7 @@ const DropDownForm = ({ id, label, options, control }) => {
                 name={id}
                 control={control}
                 render={({field:{onChange, value}}) => (
-                    <FormControl size="small">
+                    <FormControl fullWidth size="small">
                         <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
                         <Select id={id} labelId={id+"Label"} label={label} onChange={onChange} value={value}>
                             {options.map((option) => (
