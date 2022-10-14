@@ -1,8 +1,15 @@
 import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import InputForm from "../forms/InputForm";
+import { useForm } from "react-hook-form";
 
 const ForgotPassword = () => {
+    const { control, handleSubmit } = useForm();
+    
+    const submit = (data) => {
+        console.log(data);
+    };
+
     return (
         <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
             <Grid item>
@@ -11,14 +18,20 @@ const ForgotPassword = () => {
             <Grid item>
                 <p>Please answer these three security questions to retrive your password.</p>
             </Grid>
-            <InputForm type="text" id="firsQuestion" label="Answer the first question" />
-            <InputForm type="text" id="secondQuestion" label="Answer the second question" />
-            <InputForm type="text" id="thirdQuestion" label="Answer the third question" />
             <Grid item>
-                <Button variant="contained" size="small" onClick={() => alert()}>Submit</Button>
-            </Grid>
-            <Grid item>
-                <Link to={"/"}>Back to Sign In page</Link>
+                <form onSubmit={handleSubmit(submit)}>
+                    <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
+                        <InputForm type="text" id="SA1" label="Answer first security question" control={control} />
+                        <InputForm type="text" id="SA2" label="Answer the second question" control={control} />
+                        <InputForm type="text" id="SA3" label="Answer the third question" control={control} />
+                        <Grid item>
+                            <Button type="submit" variant="contained" size="small">Submit</Button>
+                        </Grid>
+                        <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
+                            <Link to={"/"}>Back to Sign In page</Link>
+                        </Grid>
+                    </Grid>
+                </form>
             </Grid>
         </Grid>
     );
