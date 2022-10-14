@@ -9,7 +9,7 @@ const InputForm = ({ type, id, label, control }) => {
                 control={control}
                 defaultValue=""
                 render={({field:{onChange, value}}) => (
-                    <TextField type={type} id={id} label={label} onChange={onChange} value={value} variant="filled" size="small" fullWidth />
+                    <TextField type={type} id={id} label={label} onChange={onChange} value={value} variant="filled" size="small" />
                 )}
             />
         </Grid>
