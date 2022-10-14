@@ -7,6 +7,7 @@ const DropDownForm = ({ id, label, options, control }) => {
             <Controller
                 name={id}
                 control={control}
+                defaultValue=""
                 render={({field:{onChange, value}}) => (
                     <FormControl fullWidth size="small">
                         <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
