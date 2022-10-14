@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
     
-    const onSubmit = (data) => {
+    const submit = (data) => {
         console.log(data);
     };
 
@@ -20,7 +20,7 @@ const SignIn = () => {
                 <h2>Sign In</h2>
             </Grid>
             <Grid item>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(submit)}>
                     <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
                         <InputForm type="text" id="username" label="Username" control={control} />
                         <InputForm type="password" id="password" label="Password" control={control} />
