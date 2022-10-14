@@ -3,7 +3,7 @@ import { Controller } from 'react-hook-form';
 
 const InputForm = ({ type, id, label, control }) => {
     return (
-        <Grid item>
+        <Grid container item>
             <Controller
                 name={id}
                 control={control}
