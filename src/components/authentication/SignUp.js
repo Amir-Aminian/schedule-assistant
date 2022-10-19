@@ -3,7 +3,7 @@ import DropDownForm from "../forms/DropDownInputForm";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
-import Register from "../../utilities/Register";
+import { Register } from "../../utilities/Authentication";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
@@ -33,8 +33,8 @@ const SignUp = () => {
                             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
                                 <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
                                 <InputForm type="email" id="emailAddress" label="Email Address" control={control} rules={{required: "This field is required"}} />
-                                <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} />
-                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", validate: (value) => (value===watch("password") || "Passwords does not match")}} />
+                                <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required", minLength:8}} />
+                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", minLength:8, validate: (value) => (value===watch("password") || "Passwords does not match")}} />
                             </Grid>
                             <Grid item>
                                 <h3>Security Questions</h3>

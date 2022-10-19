@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { Button, Grid, Box } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
+import { SingIn } from "../../utilities/Authentication";
 
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
     
     const submit = (data) => {
-        console.log(data);
+        SingIn(data);
     };
 
     return (
@@ -21,7 +22,7 @@ const SignIn = () => {
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
-                            <InputForm type="email" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
                             <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} />
                             <Grid container item justifyContent="flex-end">
                                 <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
