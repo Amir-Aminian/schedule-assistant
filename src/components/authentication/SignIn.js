@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { Button, Grid, Box } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
-import { SingIn } from "../../utilities/Authentication";
+import { Validation } from "../../utilities/Authentication";
 
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
     
     const submit = (data) => {
-        SingIn(data);
+        Validation(data);
     };
+    
 
     return (
         <Box>

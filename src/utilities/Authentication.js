@@ -4,8 +4,8 @@ export const Register = (newUser) => {
     localStorage.setItem("userDataBase", JSON.stringify(userDataBase));
 }
 
-export const SingIn = (userData) => {
+export const Validation = (userData) => {
     let userDataBase=JSON.parse(localStorage.getItem("userDataBase")) || [];
-    let validate = userDataBase.findIndex((user) => user.username===userData.username && user.password===userData.password);
-    console.log(validate);
+    let userIndex = userDataBase.findIndex((user) => user.username===userData.username && user.password===userData.password);
+    userIndex != -1 ? alert("amir") : alert("error");
 }
