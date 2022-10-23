@@ -4,9 +4,14 @@ import { Button, Grid, Box } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
 import { Validation } from "../../utilities/Authentication";
+import UserContext from "../../contexts/UserContext";
+import { useContext } from "react";
 
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
+
+    const {aa} = useContext(UserContext);
+    console.log(aa);
     
     const submit = (data) => {
         Validation(data);
