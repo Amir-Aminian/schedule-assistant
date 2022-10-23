@@ -1,17 +1,17 @@
+import { React, useContext } from 'react'
 import InputForm from "../forms/InputForm";
 import { Link } from "react-router-dom";
 import { Button, Grid, Box } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
 import { Validation } from "../../utilities/Authentication";
-import UserContext from "../../contexts/UserContext";
-import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
 
-    const {aa} = useContext(UserContext);
-    console.log(aa);
+    const {validated} = useContext(UserContext);
+    console.log(validated);
     
     const submit = (data) => {
         Validation(data);

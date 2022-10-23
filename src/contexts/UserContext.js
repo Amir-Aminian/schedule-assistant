@@ -1,13 +1,15 @@
-import { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-const UserContext = createContext();
+export const UserContext = React.createContext({});
 
-export const UserProvider = ({children}) => {
+const UserProvider = ({children}) => {
+    const [validated,setValidated] = useState(false);
+
     return (
-        <UserContext.Provider value={{aa: 1}}>
+        <UserContext.Provider value={{validated}}>
             {children}
         </UserContext.Provider>
     );
 };
 
-export default UserContext;
+export default UserProvider;
