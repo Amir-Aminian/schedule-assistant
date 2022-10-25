@@ -4,12 +4,8 @@ import SignUp from "../components/authentication/SignUp";
 import ForgotPassword from "../components/authentication/ForgotPassword";
 import { Container } from "@mui/material";
 import HomePage from "../components/homePage/HomePage";
-import { useContext } from "react";
-import UserContext from "../contexts/UserContext";
 
 const Authentication = () => {
-  const {validated} = useContext(UserContext)
-
   return (
     <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
       <BrowserRouter>

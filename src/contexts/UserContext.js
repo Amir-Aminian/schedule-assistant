@@ -1,8 +1,8 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
-export const UserContext = React.createContext({});
+const UserContext = createContext();
 
-const UserProvider = ({children}) => {
+export const UserProvider = ({children}) => {
     const [validated,setValidated] = useState(false);
 
     return (
@@ -12,4 +12,4 @@ const UserProvider = ({children}) => {
     );
 };
 
-export default UserProvider;
+export default UserContext;
