@@ -1,20 +1,31 @@
 import { React, useContext } from 'react'
 import InputForm from "../forms/InputForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Grid, Box } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
-import { Validation } from "../../utilities/Authentication";
-import UserContext from "../../contexts/UserContext";
+import Validate from "../../utilities/Validate.js";
+import UserContext from '../../contexts/UserContext';
 
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
 
-    const {validated} = useContext(UserContext);
-    console.log(validated);
+    const {changeValidated} = useContext(UserContext);
+
+    const navigate = useNavigate();
+
+    const homePage = () => {
+        changeValidated(true);
+        navigate("homePage");
+    }
+
+    const invalidUser = () => {
+        changeValidated(false);
+        navigate("invalidUser");
+    }
     
     const submit = (data) => {
-        Validation(data);
+        Validate(data)!=-1 ? homePage() : invalidUser();
     };
     
 

@@ -3,7 +3,7 @@ import DropDownForm from "../forms/DropDownInputForm";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
-import { Register } from "../../utilities/Authentication";
+import Register from "../../utilities/Register";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
