@@ -17,12 +17,12 @@ const SignIn = () => {
     const homePage = () => {
         changeValidated(true);
         navigate("homePage");
-    }
+    };
 
     const invalidUser = () => {
         changeValidated(false);
         navigate("invalidUser");
-    }
+    };
     
     const submit = (data) => {
         Validate(data)!=-1 ? homePage() : invalidUser();
@@ -39,7 +39,7 @@ const SignIn = () => {
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
-                            <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} />
                             <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} />
                             <Grid container item justifyContent="flex-end">
                                 <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
