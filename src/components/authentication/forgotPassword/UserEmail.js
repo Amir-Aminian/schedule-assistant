@@ -15,7 +15,7 @@ const UserEmail = () => {
         if (FindSQ(data.email)!=undefined) {
             setSQ(FindSQ(data.email));
         } else {
-            alert("Invalid Username");
+            alert("Invalid Email Address");
         };
     };
 

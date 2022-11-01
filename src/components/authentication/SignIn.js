@@ -20,7 +20,7 @@ const SignIn = () => {
     };
     
     const submit = (data) => {
-        Validate(data)!=-1 ? homePage() : alert("Invalid Username or Password");
+        Validate(data)!=-1 ? homePage() : alert("Invalid Email Address or Password");
     };
     
 
