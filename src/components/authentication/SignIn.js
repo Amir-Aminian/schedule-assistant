@@ -10,17 +10,17 @@ import UserContext from '../../contexts/UserContext';
 const SignIn = () => {
     const { control, handleSubmit } = useForm();
 
-    const {changeValidated} = useContext(UserContext);
+    const {setValidated} = useContext(UserContext);
 
     const navigate = useNavigate();
 
     const homePage = () => {
-        changeValidated(true);
+        setValidated(true);
         navigate("homePage");
     };
 
     const invalidUser = () => {
-        changeValidated(false);
+        setValidated(false);
         navigate("invalidUser");
     };
     

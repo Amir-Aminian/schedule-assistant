@@ -36,7 +36,8 @@ const SignUp = () => {
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
                             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
-                                <InputForm type="email" id="emailAddress" label="Email Address" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
+                                <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} />
                                 <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("password") || "Passwords do not match")}} />
                                 <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("password") || "Passwords do not match")}} />
                             </Grid>
