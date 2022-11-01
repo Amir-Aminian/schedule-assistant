@@ -18,14 +18,9 @@ const SignIn = () => {
         setValidated(true);
         navigate("homePage");
     };
-
-    const invalidUser = () => {
-        setValidated(false);
-        navigate("invalidUser");
-    };
     
     const submit = (data) => {
-        Validate(data)!=-1 ? homePage() : invalidUser();
+        Validate(data)!=-1 ? homePage() : alert("Invalid Username or Password");
     };
     
 
