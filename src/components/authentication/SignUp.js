@@ -1,5 +1,5 @@
-import InputForm from "../forms/InputForm";
-import DropDownForm from "../forms/DropDownInputForm";
+import InputForm from "../../forms/InputForm";
+import DropDownForm from "../../forms/DropDownInputForm";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";

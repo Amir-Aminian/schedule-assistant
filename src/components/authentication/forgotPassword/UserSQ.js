@@ -1,6 +1,6 @@
 import { Box, Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
-import InputForm from "../../forms/InputForm";
+import InputForm from "../../../forms/InputForm";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import UserContext from "../../../contexts/UserContext";
