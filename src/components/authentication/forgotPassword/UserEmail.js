@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import InputForm from "../../../forms/InputForm";
 import { useForm } from "react-hook-form";
 import FindSQ from "../../../utilities/FindSQ";
+import FindSA from "../../../utilities/FindSA";
 import { useContext } from "react";
 import UserContext from "../../../contexts/UserContext";
 
 const UserEmail = () => {
-    const {setSQ} = useContext(UserContext);
+    const {setSQ, setSA} = useContext(UserContext);
     
     const { control, handleSubmit } = useForm();
     
     const submit = (data) => {
         if (FindSQ(data.email)!=undefined) {
             setSQ(FindSQ(data.email));
+            setSA(FindSA(data.email));
         } else {
             alert("Invalid Email Address");
         };

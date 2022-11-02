@@ -6,12 +6,16 @@ import { useContext } from "react";
 import UserContext from "../../../contexts/UserContext";
 
 const UserSQ = ({SQ1, SQ2, SQ3}) => {
-    const {setSQ} = useContext(UserContext);
+    const {setSQ, SA, setSA} = useContext(UserContext);
 
     const { control, handleSubmit } = useForm();
     
     const submit = (data) => {
-        console.log(data);
+        if (data.SA1===SA[0] && data.SA2===SA[1] && data.SA3===SA[2]) {
+            setSA(true);
+        } else {
+            alert("You have entered wrong security question's answer")
+        }
     };
 
     return (

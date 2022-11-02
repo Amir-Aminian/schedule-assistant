@@ -7,8 +7,10 @@ export const UserProvider = ({children}) => {
 
     const [SQ, setSQ] = useState(undefined);
 
+    const [SA, setSA] = useState(false);
+
     return (
-        <UserContext.Provider value={{validated, setValidated, SQ, setSQ}}>
+        <UserContext.Provider value={{validated, setValidated, SQ, setSQ, SA, setSA}}>
             {children}
         </UserContext.Provider>
     );
