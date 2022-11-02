@@ -1,14 +1,22 @@
 import { Box, Button, Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputForm from "../../../forms/InputForm";
 import { useForm } from "react-hook-form";
 import ResetUserPassword from "../../../utilities/ResetUserPassword";
+import { useContext } from "react";
+import UserContext from "../../../contexts/UserContext";
 
 const ResetPassword = () => {
     const { control, handleSubmit, watch } = useForm();
+
+    const {userEmail, setSA} = useContext(UserContext);
+
+    const navigate = useNavigate();
     
     const submit = (data) => {
-        ResetUserPassword(data.newPassword);
+        ResetUserPassword(userEmail, data.newPassword);
+        navigate("/");
+        setSA(false);
     };
 
     return (
@@ -29,7 +37,7 @@ const ResetPassword = () => {
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>
                             <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
-                                <Link to={"/"}>Back to Sign In page</Link>
+                                <Link to={"/"} onClick={() => setSA(false)}>Back to Sign In page</Link>
                             </Grid>
                         </Grid>
                     </form>

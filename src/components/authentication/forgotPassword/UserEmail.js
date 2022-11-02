@@ -8,12 +8,13 @@ import { useContext } from "react";
 import UserContext from "../../../contexts/UserContext";
 
 const UserEmail = () => {
-    const {setSQ, setSA} = useContext(UserContext);
+    const {setUserEmail, setSQ, setSA} = useContext(UserContext);
     
     const { control, handleSubmit } = useForm();
     
     const submit = (data) => {
         if (FindSQ(data.email)!=undefined) {
+            setUserEmail(data.email);
             setSQ(FindSQ(data.email));
             setSA(FindSA(data.email));
         } else {
