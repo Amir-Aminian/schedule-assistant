@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import { useEffect } from 'react'
 import InputForm from "../../forms/InputForm";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Grid, Box } from "@mui/material";
