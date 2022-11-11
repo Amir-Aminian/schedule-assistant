@@ -21,9 +21,7 @@ const SignIn = () => {
         }
     }, []);
 
-    if (localStorage.getItem("userEmail")!=undefined) {
-        return;
-    } else {     
+    if (localStorage.getItem("userEmail")==undefined) {    
         return (
             <Box>
                 <NavigationBar tabIndex={0} />
