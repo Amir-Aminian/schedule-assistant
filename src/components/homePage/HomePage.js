@@ -6,13 +6,7 @@ import SetWeek from "../../utilities/SetWeek";
 const HomePage = () => {
     const navigate = useNavigate();
 
-    let date = new Date("2022-02-26");
-
-    let startDate = SetWeek(date)[0];
-
-    let endDate = SetWeek(date)[1];
-
-    let month = SetWeek(date)[2];
+    let date = new Date();
 
     useEffect(() => {
         if (localStorage.getItem("userEmail")==undefined) {
@@ -24,9 +18,14 @@ const HomePage = () => {
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
             <Box>
-                <h2>{month}</h2>
-                <h2>{startDate}</h2>
-                <h2>{endDate}</h2>
+                <h2>{SetWeek(date).month}</h2>
+                <h2>{SetWeek(date).weekDates[0]}</h2>
+                <h2>{SetWeek(date).weekDates[1]}</h2>
+                <h2>{SetWeek(date).weekDates[2]}</h2>
+                <h2>{SetWeek(date).weekDates[3]}</h2>
+                <h2>{SetWeek(date).weekDates[4]}</h2>
+                <h2>{SetWeek(date).weekDates[5]}</h2>
+                <h2>{SetWeek(date).weekDates[6]}</h2>
             </Box>
         );
     }    

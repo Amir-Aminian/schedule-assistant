@@ -1,7 +1,9 @@
 const SetWeek = (d) => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    let month = months[d.getMonth()];
+    let month;
+
+    let weekDates=[];
 
     let date = d.getDate()+1;
 
@@ -11,9 +13,19 @@ const SetWeek = (d) => {
 
     let startIndex = date-d.getDay();
 
-    let endIndex = date-d.getDay()+6;
+    let endIndex = startIndex+6;
 
-    return([new Date(startDate.setDate(startIndex)).getDate(), new Date(endDate.setDate(endIndex)).getDate(), month]);
+    for (let i = startIndex; i <= endIndex; i++) {
+        weekDates.push(new Date(startDate.setDate(i)).getDate());
+    };
+
+    if (months[new Date(startDate.setDate(startIndex)).getMonth()]!=months[new Date(endDate.setDate(endIndex)).getMonth()]) {
+        month = months[new Date(startDate.setDate(startIndex)).getMonth()]+"-"+months[new Date(endDate.setDate(endIndex)).getMonth()];
+    } else {
+        month = months[d.getMonth()];
+    };
+
+    return({month: month, weekDates: weekDates});
 }
 
 export default SetWeek;
