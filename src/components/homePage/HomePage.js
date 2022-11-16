@@ -32,7 +32,7 @@ const HomePage = () => {
         return (
             <Container maxWidth="md" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
                 <button onClick={previousWeek}>Previous Week</button>
-                <button onClick={today}>Today</button>
+                <button onClick={today}>This Week</button>
                 <button onClick={nextWeek}>Next Week</button>
                 <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDates={SetWeek(date).weekDates}></WeekTable>
             </Container>
