@@ -1,14 +1,26 @@
-import { Table } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
 
 const WeekTable = ({year, month, weekDates}) => {
     return (
-        <Table>
-            <h2>{year}</h2>
-            <h2>{month}</h2>
-            {weekDates.map((weekDate) => (
-                 <h2 key={weekDate}>{weekDate}</h2>
-            ))}
-        </Table>
+        <TableContainer>
+            <Table>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>
+                            {month}
+                        </TableCell>
+                        <TableCell>
+                            {year}
+                        </TableCell>
+                    </TableRow>
+                    {weekDates.map((weekDate) => (
+                        <TableRow key={weekDate}>
+                            <TableCell>{weekDate}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
     );
 }
 
