@@ -1,10 +1,14 @@
-import { Container } from "@mui/material";
+import { Container, Table } from "@mui/material";
 
-const WeekTable = () => {
+const WeekTable = ({year, month, weekDates}) => {
     return (
-        <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
-            
-        </Container>
+        <>
+            <h2>{year}</h2>
+            <h2>{month}</h2>
+            {weekDates.map((weekDate) => (
+                 <h2>{weekDate}</h2>
+            ))}
+        </>
     );
 }
 

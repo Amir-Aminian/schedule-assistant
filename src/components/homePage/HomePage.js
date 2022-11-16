@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SetWeek from "../../utilities/SetWeek";
+import WeekTable from "../tables/WeekTable";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -33,15 +34,7 @@ const HomePage = () => {
                 <button onClick={previousWeek}>Previous Week</button>
                 <button onClick={today}>Today</button>
                 <button onClick={nextWeek}>Next Week</button>
-                <h2>{SetWeek(date).year}</h2>
-                <h2>{SetWeek(date).month}</h2>
-                <h2>{SetWeek(date).weekDates[0]}</h2>
-                <h2>{SetWeek(date).weekDates[1]}</h2>
-                <h2>{SetWeek(date).weekDates[2]}</h2>
-                <h2>{SetWeek(date).weekDates[3]}</h2>
-                <h2>{SetWeek(date).weekDates[4]}</h2>
-                <h2>{SetWeek(date).weekDates[5]}</h2>
-                <h2>{SetWeek(date).weekDates[6]}</h2>
+                <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDates={SetWeek(date).weekDates}></WeekTable>
             </Container>
         );
     };   
