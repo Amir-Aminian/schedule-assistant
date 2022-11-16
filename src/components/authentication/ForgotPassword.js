@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Container } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import UserEmail from "./forgotPassword/UserEmail";
@@ -16,9 +16,9 @@ const ForgotPassword = () => {
     if (SA === true) {context = <ResetPassword />};
 
     return (
-        <Box>
+        <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
             {context}
-        </Box>
+        </Container>
     );
 }
 

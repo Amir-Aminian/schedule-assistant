@@ -1,7 +1,7 @@
 import InputForm from "../../forms/InputForm";
 import DropDownForm from "../../forms/DropDownInputForm";
 import { Link, useNavigate } from "react-router-dom";
-import { Box, Button, Grid } from "@mui/material";
+import { Container, Button, Grid } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import Register from "../../utilities/Register";
 import { useForm } from "react-hook-form";
@@ -25,7 +25,7 @@ const SignUp = () => {
     };
 
     return (
-        <Box>
+        <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
             <NavigationBar tabIndex={1} />
             <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
                     
@@ -65,7 +65,7 @@ const SignUp = () => {
                     </form>
                 </Grid>  
             </Grid>
-        </Box>
+        </Container>
     );
 }
 

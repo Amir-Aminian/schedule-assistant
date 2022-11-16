@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import InputForm from "../../forms/InputForm";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Grid, Box } from "@mui/material";
+import { Button, Grid, Container } from "@mui/material";
 import NavigationBar from "./NavigationBar";
 import { useForm } from "react-hook-form";
 import Validate from "../../utilities/Validate.js";
@@ -23,7 +23,7 @@ const SignIn = () => {
 
     if (localStorage.getItem("userEmail")==undefined) {    
         return (
-            <Box>
+            <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
                 <NavigationBar tabIndex={0} />
                 <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
                     <Grid item>
@@ -44,7 +44,7 @@ const SignIn = () => {
                         </form>
                     </Grid>
                 </Grid>
-            </Box>
+            </Container>
         );
     }
 }

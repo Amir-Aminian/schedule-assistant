@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SetWeek from "../../utilities/SetWeek";
@@ -29,7 +29,7 @@ const HomePage = () => {
 
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
-            <Box>
+            <Container maxWidth="md" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
                 <button onClick={previousWeek}>Previous Week</button>
                 <button onClick={today}>Today</button>
                 <button onClick={nextWeek}>Next Week</button>
@@ -42,7 +42,7 @@ const HomePage = () => {
                 <h2>{SetWeek(date).weekDates[4]}</h2>
                 <h2>{SetWeek(date).weekDates[5]}</h2>
                 <h2>{SetWeek(date).weekDates[6]}</h2>
-            </Box>
+            </Container>
         );
     };   
 }
