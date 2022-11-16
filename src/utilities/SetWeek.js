@@ -9,7 +9,9 @@ const SetWeek = (d) => {
 
     let date = d.getDate()+1;
 
-    let startIndex = date-d.getDay();
+    let day = d.getDay();
+
+    let startIndex = date-day;
 
     let endIndex = startIndex+6;
 

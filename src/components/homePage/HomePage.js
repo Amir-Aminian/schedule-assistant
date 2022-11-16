@@ -42,7 +42,7 @@ const HomePage = () => {
                         <Button onClick={nextWeek} variant="contained" size="small" sx={{mb: 4}}>Next Week</Button>
                     </Grid>
                 </Grid>
-                <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDates={SetWeek(date).weekDates}></WeekTable>
+                <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDates={SetWeek(date).weekDates} />
             </Container>
         );
     };   

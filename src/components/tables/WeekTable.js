@@ -15,7 +15,7 @@ const WeekTable = ({year, month, weekDates}) => {
                     </TableRow>
                     {weekDates.map((weekDate) => (
                         <TableRow key={weekDate}>
-                            <TableCell>{weekDate}</TableCell>
+                            <TableCell colSpan={2}>{weekDate}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
