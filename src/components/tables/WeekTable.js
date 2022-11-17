@@ -1,18 +1,22 @@
-import { Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
 const WeekTable = ({year, month, weekDates}) => {
+    const weekDays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday", "Sunday"];
+
     return (
         <TableContainer>
             <Table>
-                <TableBody>
+                <TableHead>
                     <TableRow>
-                        <TableCell>
+                        <TableCell align="center">
                             {month}
                         </TableCell>
-                        <TableCell>
+                        <TableCell align="left">
                             {year}
                         </TableCell>
                     </TableRow>
+                </TableHead>
+                <TableBody>
                     {weekDates.map((weekDate) => (
                         <TableRow key={weekDate}>
                             <TableCell colSpan={2}>{weekDate}</TableCell>
