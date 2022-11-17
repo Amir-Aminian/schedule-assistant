@@ -35,8 +35,10 @@ const SetWeek = (d) => {
 
     for (let i = startIndex; i <= endIndex; i++) {
         let weekDate = new Date(d);
-        weekDays.push({weekDate: new Date(weekDate.setDate(i)).getDate(), weekDay: days[new Date(weekDate.setDate(i-1)).getDay()]});
+        weekDays.push({weekDate: new Date(weekDate.setDate(i)).getDate(), weekDay: days[i-startIndex]});
     };
+    
+    // new Date(weekDate.setDate(i-1)).getDay() //ask Patrick
     
     return({year: year, month: month, weekDays: weekDays});
 }
