@@ -30,7 +30,7 @@ const HomePage = () => {
 
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
-            <Container maxWidth="md" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
+            <Container maxWidth="lg" sx={{mt: 10 , mb: 5, backgroundColor: "white", borderRadius: "2%"}}>
                 <Grid container direction="row" alignItems="center" justifyContent="center" spacing={4}>
                     <Grid item>
                         <Button onClick={previousWeek} variant="contained" size="small" sx={{mb: 4}}>Previous Week</Button>
