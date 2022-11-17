@@ -17,10 +17,13 @@ const WeekTable = ({year, month, weekDays}) => {
                 {weekDays.map((weekDay) => (
                     <TableBody key={weekDay.weekDate}>
                         <TableRow>
-                            <TableCell colSpan={2}>{weekDay.weekDay}</TableCell>
+                            <TableCell colSpan={2} sx={{border:"none"}}>{weekDay.weekDay}</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={2}>{weekDay.weekDate}</TableCell>
+                            <TableCell colSpan={2} sx={{border:"none"}}>{weekDay.weekDate}</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell colSpan={2}>{weekDay.weekMonth}</TableCell>
                         </TableRow>
                     </TableBody>
                 ))}
