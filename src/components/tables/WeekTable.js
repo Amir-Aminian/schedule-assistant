@@ -1,9 +1,14 @@
 import { Card, CardContent, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { useState } from "react";
+import PopupWindow from "../homePage/PopupWindow";
 import CollapsibleTable from "./CollapsibleTable";
 
 
 const WeekTable = ({year, month, weekDays}) => {
+    const [open, setOpen] = useState(false);
+
     return (
+        <>
         <TableContainer>
             <Table>
                 <TableHead>
@@ -20,7 +25,7 @@ const WeekTable = ({year, month, weekDays}) => {
                     <TableBody key={weekDay.weekDate}>
                         <TableRow>
                             <TableCell rowSpan={2} size="small">
-                                <Card sx={{maxWidth:115}} align="center">
+                                <Card onClick={() => setOpen(true)} sx={{maxWidth:115}} align="center">
                                     <CardContent>
                                         <Typography variant="body1" borderBottom={1}>
                                             {weekDay.weekDay}
@@ -40,6 +45,8 @@ const WeekTable = ({year, month, weekDays}) => {
                 ))}
             </Table>
         </TableContainer>
+        <PopupWindow open={open} onClose={() => setOpen(false)} />
+        </>
     );
 }
 
