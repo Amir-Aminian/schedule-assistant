@@ -19,7 +19,7 @@ const WeekTable = ({year, month, weekDays}) => {
                 {weekDays.map((weekDay) => (
                     <TableBody key={weekDay.weekDate}>
                         <TableRow>
-                            <TableCell sx={{border:"none"}} colSpan={2} align="center" size="small">
+                            <TableCell rowSpan={2} size="small">
                                 <Card sx={{maxWidth:115}} align="center">
                                     <CardContent>
                                         <Typography variant="body1" borderBottom={1}>
@@ -35,7 +35,7 @@ const WeekTable = ({year, month, weekDays}) => {
                                 </Card>
                             </TableCell>
                         </TableRow>                          
-                        <CollapsibleTable/>
+                        <CollapsibleTable />
                     </TableBody>
                 ))}
             </Table>
