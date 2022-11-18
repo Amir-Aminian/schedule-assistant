@@ -1,5 +1,6 @@
 import { Card, CardContent, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
-import { width } from "@mui/system";
+import CollapsibleTable from "./CollapsibleTable";
+
 
 const WeekTable = ({year, month, weekDays}) => {
     return (
@@ -15,10 +16,10 @@ const WeekTable = ({year, month, weekDays}) => {
                         </TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
-                    {weekDays.map((weekDay) => (
-                        <TableRow key={weekDay.weekDate}>
-                            <TableCell colSpan={2} align="center" size="small">
+                {weekDays.map((weekDay) => (
+                    <TableBody key={weekDay.weekDate}>
+                        <TableRow>
+                            <TableCell sx={{border:"none"}} colSpan={2} align="center" size="small">
                                 <Card sx={{maxWidth:115}} align="center">
                                     <CardContent>
                                         <Typography variant="body1" borderBottom={1}>
@@ -33,9 +34,10 @@ const WeekTable = ({year, month, weekDays}) => {
                                     </CardContent>
                                 </Card>
                             </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
+                        </TableRow>                          
+                        <CollapsibleTable/>
+                    </TableBody>
+                ))}
             </Table>
         </TableContainer>
     );
