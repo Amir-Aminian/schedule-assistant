@@ -1,22 +1,23 @@
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import {chart as chartjs} from "chart.js/auto"
 import {Chart} from 'chart.js';
 import 'chartjs-adapter-luxon';
 
 const DayBarChart = () => {
     return (
-        <Bar height={"50%"}
+        <Line height={"50%"}
             data={{
                 labels:["John", "Jack"], 
-                datasets:[{data: ["07:00","08:00"]}, { data: ["06:00","09:00"]}]
+                datasets:[
+                    {data:[{x:"10:00", y:"John"}, {x:"11:00", y:"John"}], backgroundColor:"orange"}, {data:[{x:"12:00", y:"Jack"}, {x:"13:00",y:"Jack"}], backgroundColor:"blue"}
+                ]
             }} 
             options={{
                 indexAxis:"y", 
-                y:{stacked:true}, 
                 barThickness:10, 
                 plugins:{legend:{display:false}}, 
                 scales:{
-                    x:{grid:{display:false}, 
+                    x:{grid:{display:false},
                        type:"time",
                        min:"00:00",
                        max:"24:00",
@@ -24,8 +25,14 @@ const DayBarChart = () => {
                         unit:"minute"
                        }
                     }, 
-                    y:{grid:{display:false}}
-                }
+                    y:{
+                        grid:{display:false}
+                    }
+                },
+                // parsing: {
+                //     xAxisKey: 'data\\.x',
+                //     yAxisKey: 'data\\.y'
+                //   }
             }}
          />
     );
