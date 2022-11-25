@@ -39,7 +39,7 @@ const WeekTable = ({year, month, weekDays}) => {
                                         </CardContent>
                                     </Card>
                                 </TableCell>
-                                <TableCell size="small" align="left" sx={{border:"none"}}>
+                                <TableCell size="small" align="center" sx={{border:"none"}}>
                                     <DayBarChart />    
                                 </TableCell>  
                             </TableRow> 
