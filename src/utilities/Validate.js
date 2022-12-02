@@ -6,6 +6,7 @@ const Validate = (userData) => {
     if (userIndex!=-1) {
         userDataBase[userIndex].validated = true;
         localStorage.setItem("userEmail", userData.email);
+        localStorage.setItem("userName",  userDataBase[userIndex].username);
     };
 
     return(userIndex);

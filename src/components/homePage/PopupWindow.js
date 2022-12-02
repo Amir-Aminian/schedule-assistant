@@ -1,6 +1,19 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Button, Chip, Modal, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
+import SetTask from "../../utilities/SetTask";
+import InputForm from "../../forms/InputForm";
+import { DateRange } from "@mui/icons-material";
 
-const PopupWindow = ({open, onClose}) => {
+const PopupWindow = ({open, onClose, date}) => {
+    const user = localStorage.getItem("userName");
+    
+    const {control, handleSubmit} = useForm();
+
+    const submit = (data) => {
+        SetTask({user: user, data:[[date, data]]});
+        // window.location.reload();
+    };
+
     const style = {
         position: 'absolute',
         top: '50%',
@@ -16,12 +29,16 @@ const PopupWindow = ({open, onClose}) => {
     return (
         <Modal open={open} onClose={onClose}>
             <Box sx={style}>            
-                <Typography variant="h6">
-                    Test header
-                </Typography>
-                <Typography sx={{ mt: 2 }}>
-                    test context
-                </Typography>
+                <form onSubmit={handleSubmit(submit)}>
+                    <Chip label={user} variant="outlined" />
+                    <DateRange />
+                    <Typography>{date[0]} {date[1]} {date[2]}</Typography>
+                    <InputForm type="text" id="taskTitle" label="Task Title" control={control} rules={{required: "This field is required"}} />
+                    <InputForm type="time" id="startTime" label="Task Start Time" control={control} rules={{required: "This field is required"}} />
+                    <InputForm type="time" id="endTime" label="Task End Time" control={control} rules={{required: "This field is required"}} />
+                    <InputForm type="text" id="taskDescription" label="Task Description" control={control} rules={{required: "This field is required"}} />
+                    <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Done</Button>
+                </form>
             </Box>
         </Modal>
     );

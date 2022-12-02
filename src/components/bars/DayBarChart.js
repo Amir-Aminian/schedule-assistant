@@ -1,38 +1,50 @@
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import {chart as chartjs} from "chart.js/auto"
 import {Chart} from 'chart.js';
 import 'chartjs-adapter-luxon';
 
-const DayBarChart = () => {
+const DayBarChart = ({dayTasks}) => {
+    const clickHandler = (e, element) => {
+        if (element.length>0) {
+            alert("Hello!")
+            console.log(element[0].datasetIndex);
+        };
+    };
+
     return (
-        <Line height={"50%"}
-            data={{
-                labels:["John", "Jack"], 
-                datasets:[
-                    {data:[{x:"10:00", y:"John"}, {x:"11:00", y:"John"}], backgroundColor:"orange"}, {data:[{x:"12:00", y:"Jack"}, {x:"13:00",y:"Jack"}], backgroundColor:"blue"}
-                ]
-            }} 
+        <Bar
+            height={"50%"}
+            data={dayTasks} 
             options={{
-                indexAxis:"y", 
-                barThickness:10, 
-                plugins:{legend:{display:false}}, 
+                onClick:(e, element) => clickHandler(e, element),
+                indexAxis:"y",
+                borderSkipped:false,
+                borderWidth:"2",
+                borderColor:"grey",
+                borderRadius:"5", 
+                barPercentage:"0.5", 
+                plugins:{
+                    legend:{display:false},
+                    tooltip:{enabled:false}                    
+                }, 
                 scales:{
-                    x:{grid:{display:false},
-                       type:"time",
-                       min:"00:00",
-                       max:"24:00",
-                       time:{
-                        unit:"minute"
+                    x:{
+                        type:"time",
+                        min:"00:00",
+                        max:"24:00",
+                        time:{
+                            unit:"hour",
+                            displayFormats:{hour:"ha"}
                        }
                     }, 
                     y:{
-                        grid:{display:false}
+                        stacked:true,
+                        grid:{display:false},
+                        ticks:{
+                            font:{size:"15%"}
+                        }
                     }
-                },
-                // parsing: {
-                //     xAxisKey: 'data\\.x',
-                //     yAxisKey: 'data\\.y'
-                //   }
+                }
             }}
          />
     );

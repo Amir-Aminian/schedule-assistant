@@ -13,7 +13,7 @@ const CollapsibleTable = () => {
                     {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                 </IconButton>
             </TableCell>
-            <TableCell size="small">
+            <TableCell size="small" colSpan={2}>
                 <Collapse in={open} align="left">
                     <Typography>Test1</Typography>
                     <Typography>Test2</Typography>
