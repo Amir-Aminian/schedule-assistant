@@ -2,9 +2,9 @@ const SetTask = (taskData) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
 
     let userIndex = usersTasks.findIndex((data) => data.user===taskData.user);
-    let dateIndex = usersTasks[userIndex].data.findIndex((data) => data[0][0][0]===taskData.data[0][0][0]);
-        console.log(dateIndex)
-
+    let dateIndex = usersTasks[userIndex].data.findIndex((data) => data[0][0]===taskData.data[0][0]);
+    console.log(taskData.data[0][0])
+    console.log()
     // if (userIndex!=-1) {
     //     let dateIndex = usersTasks[userIndex].data.findIndex((data) => data[0][0]===taskData.data[0][0]);
     //     if (dateIndex!=-1) {
