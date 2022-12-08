@@ -9,7 +9,7 @@ const Routing = () => {
       <BrowserRouter>
         <Routes>        
           <Route path="/" element={<SignIn />} />
-          <Route path="singUp" element={<SignUp />} />
+          <Route path="signUp" element={<SignUp />} />
           <Route path="forgotPassword" element={<ForgotPassword />} />
           <Route path="homePage" element={<HomePage />} />
           <Route path="*" element={<h1>ERROR 404</h1>} />

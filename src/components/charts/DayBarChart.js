@@ -7,7 +7,6 @@ const DayBarChart = ({dayTasks}) => {
     const clickHandler = (e, element) => {
         if (element.length>0) {
             alert("Hello!")
-            console.log(element[0].datasetIndex);
         };
     };
 
@@ -17,7 +16,7 @@ const DayBarChart = ({dayTasks}) => {
             data={{
                 datasets:
                     dayTasks.map((data) =>( 
-                        {data:[{x:[data.task.startTime, data.task.endTime],y:data.user}], backgroundColor:"orange"}
+                        {data:[{x:[data.task.startTime, data.task.endTime],y:data.user}], backgroundColor:data.color}
                     ))
             }} 
             options={{
