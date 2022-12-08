@@ -23,8 +23,6 @@ const DayBarChart = ({dayTasks}) => {
                 onClick:(e, element) => clickHandler(e, element),
                 indexAxis:"y",
                 borderSkipped:false,
-                borderWidth:"2",
-                borderColor:"grey",
                 borderRadius:"5", 
                 barPercentage:"0.5", 
                 plugins:{
