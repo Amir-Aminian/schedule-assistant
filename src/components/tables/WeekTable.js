@@ -48,7 +48,7 @@ const WeekTable = ({year, month, weekDays}) => {
                                     </IconButton>    
                                 </TableCell>  
                                 <TableCell size="small" align="center">
-                                    {/* <GetTask date={weekDay.weekDate}/>     */}
+                                    <GetTask date={[weekDay.weekDay, weekDay.weekDate, weekDay.weekMonth, year]} />    
                                 </TableCell>  
                             </TableRow> 
                         </React.Fragment>

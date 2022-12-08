@@ -8,7 +8,7 @@ const SetTask = (userTask) => {
         if (data.user===userTask.user) {
             user.push(data);
         }
-    })
+    });
 
     if (user.length === 0) {
         usersTasks.push(userTask);
@@ -20,7 +20,7 @@ const SetTask = (userTask) => {
         if (data.date===userTask.date) {
             date.push(data)
         } 
-    })
+    });
 
     if (date.length === 0) {
         usersTasks.push(userTask);

@@ -14,7 +14,12 @@ const DayBarChart = ({dayTasks}) => {
     return (
         <Bar
             height={"50%"}
-            data={dayTasks} 
+            data={{
+                datasets:
+                    dayTasks.map((data) =>( 
+                        {data:[{x:[data.task.startTime, data.task.endTime],y:data.user}], backgroundColor:"orange"}
+                    ))
+            }} 
             options={{
                 onClick:(e, element) => clickHandler(e, element),
                 indexAxis:"y",

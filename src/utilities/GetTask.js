@@ -2,10 +2,13 @@ import DayBarChart from "../components/charts/DayBarChart";
 
 const GetTask = ({date}) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
+    let dayTasks= [];
 
-    let dateIndex = usersTasks.findIndex((data) => data.date===date);
-
-    let dayTasks = usersTasks[dateIndex];
+    usersTasks.forEach((data) => {
+        if (data.date===new Date(date).getTime()) {
+            dayTasks.push(data);
+        }
+    });
 
     return (
         <DayBarChart dayTasks={dayTasks} />
