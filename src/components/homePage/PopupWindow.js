@@ -10,8 +10,8 @@ const PopupWindow = ({open, onClose, date}) => {
     const {control, handleSubmit} = useForm();
 
     const submit = (data) => {
-        SetTask({user: user, data:[[date, data]]});
-        // window.location.reload();
+        SetTask({user: user, date: new Date(date).getTime(), task: data});        
+        window.location.reload();
     };
 
     const style = {
@@ -32,7 +32,7 @@ const PopupWindow = ({open, onClose, date}) => {
                 <form onSubmit={handleSubmit(submit)}>
                     <Chip label={user} variant="outlined" />
                     <DateRange />
-                    <Typography>{date[0]} {date[1]} {date[2]}</Typography>
+                    <Typography>{date[0]} {date[1]} {date[2]} {date[3]}</Typography>
                     <InputForm type="text" id="taskTitle" label="Task Title" control={control} rules={{required: "This field is required"}} />
                     <InputForm type="time" id="startTime" label="Task Start Time" control={control} rules={{required: "This field is required"}} />
                     <InputForm type="time" id="endTime" label="Task End Time" control={control} rules={{required: "This field is required"}} />

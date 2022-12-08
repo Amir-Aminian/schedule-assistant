@@ -1,22 +1,47 @@
-const SetTask = (taskData) => {
+const SetTask = (userTask) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
+    let user = [];
+    let date = [];    
+    let conflict = 0;
 
-    let userIndex = usersTasks.findIndex((data) => data.user===taskData.user);
-    let dateIndex = usersTasks[userIndex].data.findIndex((data) => data[0][0]===taskData.data[0][0]);
-    console.log(taskData.data[0][0])
-    console.log()
-    // if (userIndex!=-1) {
-    //     let dateIndex = usersTasks[userIndex].data.findIndex((data) => data[0][0]===taskData.data[0][0]);
-    //     if (dateIndex!=-1) {
-    //         usersTasks[userIndex].data[dateIndex].push(taskData.data[0][1]);
-    //     } else {
-    //         usersTasks[userIndex].data.push(taskData.data[0]);
-    //     };        
-    // } else {
-    //     usersTasks.push(taskData);
-    // };
+    usersTasks.forEach((data) => {
+        if (data.user===userTask.user) {
+            user.push(data);
+        }
+    })
 
-    // localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
+    if (user.length === 0) {
+        usersTasks.push(userTask);
+        localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
+        return;
+    };
+
+    user.forEach((data) => {
+        if (data.date===userTask.date) {
+            date.push(data)
+        } 
+    })
+
+    if (date.length === 0) {
+        usersTasks.push(userTask);
+        localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
+        return;
+    };
+
+    date.forEach((data) => {
+        if (((data.task.startTime <= userTask.task.startTime) && (userTask.task.startTime <= data.task.endTime)) || ((data.task.startTime <= userTask.task.endTime) && (userTask.task.endTime <= data.task.endTime))) {
+            conflict++;
+        };
+    }); 
+    
+    if (conflict != 0) {
+        alert("You cannot add this task due to a time conflict with another task.");
+        conflict = 0
+    } else {
+        usersTasks.push(userTask);
+        localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
+        return;
+    };
 }
 
 export default SetTask;

@@ -43,7 +43,7 @@ const WeekTable = ({year, month, weekDays}) => {
                                     </Card>
                                 </TableCell>
                                 <TableCell size="small" align="center" width={"5%"}>
-                                    <IconButton onClick={() => {setDate([weekDay.weekDate, weekDay.weekMonth, year]);setOpen(true);}}>
+                                    <IconButton onClick={() => {setDate([weekDay.weekDay, weekDay.weekDate, weekDay.weekMonth, year]);setOpen(true);}}>
                                         <Edit />
                                     </IconButton>    
                                 </TableCell>  

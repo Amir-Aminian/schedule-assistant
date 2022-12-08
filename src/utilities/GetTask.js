@@ -1,4 +1,4 @@
-import DayBarChart from "../components/bars/DayBarChart";
+import DayBarChart from "../components/charts/DayBarChart";
 
 const GetTask = ({date}) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
