@@ -13,7 +13,7 @@ const SetTask = (userTask) => {
     if (user.length === 0) {
         usersTasks.push(userTask);
         localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
-        return;
+        return(true);
     };
 
     user.forEach((data) => {
@@ -25,13 +25,15 @@ const SetTask = (userTask) => {
     if (date.length === 0) {
         usersTasks.push(userTask);
         localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
-        return;
+        return(true);
     };
 
     date.forEach((data) => {
-        if (((data.task.startTime <= userTask.task.startTime) && (userTask.task.startTime <= data.task.endTime)) || ((data.task.startTime <= userTask.task.endTime) && (userTask.task.endTime <= data.task.endTime))) {
+        if (((data.task.startTime <= userTask.task.startTime) && (userTask.task.startTime < data.task.endTime)) || ((data.task.startTime < userTask.task.endTime) && (userTask.task.endTime <= data.task.endTime))) {
             conflict++;
-        };
+        } else if (((data.task.startTime >= userTask.task.startTime) && (data.task.startTime < userTask.task.endTime)) || ((data.task.endTime > userTask.task.startTime) && (userTask.task.endTime >= data.task.endTime))) {
+            conflict++;
+        }
     }); 
     
     if (conflict != 0) {
@@ -40,7 +42,7 @@ const SetTask = (userTask) => {
     } else {
         usersTasks.push(userTask);
         localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
-        return;
+        return(true);
     };
 }
 

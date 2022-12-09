@@ -1,4 +1,4 @@
-import { Edit } from "@mui/icons-material";
+import { AddCircleOutline } from "@mui/icons-material";
 import { Card, CardContent, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import React, { useState } from "react";
 import GetTask from "../../utilities/GetTask";
@@ -44,7 +44,7 @@ const WeekTable = ({year, month, weekDays}) => {
                                 </TableCell>
                                 <TableCell size="small" align="center" width={"5%"}>
                                     <IconButton onClick={() => {setDate([weekDay.weekDay, weekDay.weekDate, weekDay.weekMonth, year]);setOpen(true);}}>
-                                        <Edit />
+                                        <AddCircleOutline />
                                     </IconButton>    
                                 </TableCell>  
                                 <TableCell size="small" align="center">

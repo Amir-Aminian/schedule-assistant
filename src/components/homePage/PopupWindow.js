@@ -16,8 +16,9 @@ const PopupWindow = ({open, onClose, date}) => {
     const[colorLabel, setColorLabel] = useState("Blue");
 
     const submit = (data) => {
-        SetTask({user: user, date: new Date(date).getTime(), task: data, color:color});        
-        window.location.reload();
+        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
+            window.location.reload();
+        };
     };
 
     const style = {
