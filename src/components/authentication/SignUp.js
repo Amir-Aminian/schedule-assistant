@@ -27,8 +27,7 @@ const SignUp = () => {
     return (
         <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
             <NavigationBar tabIndex={1} />
-            <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>
-                    
+            <Grid container direction="column" alignItems="center" justifyContent="center" spacing={2}>  
                 <Grid item>
                     <h2>Sign Up</h2>
                 </Grid>
