@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     if (SA === true) {context = <ResetPassword />};
 
     return (
-        <Container maxWidth="xs" sx={{mt: 10 , mb: 10, backgroundColor: "white", borderRadius: "2%"}}>
+        <Container maxWidth="xs" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "2%"}}>
             {context}
         </Container>
     );
