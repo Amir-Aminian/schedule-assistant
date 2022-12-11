@@ -30,7 +30,7 @@ const UserSQ = ({SQ1, SQ2, SQ3}) => {
                 </Grid>
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
-                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={400}>
+                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
                             <InputForm type="text" id="SA1" label={SQ1} control={control} rules={{required: "This field is required"}} />
                             <InputForm type="text" id="SA2" label={SQ2} control={control} rules={{required: "This field is required"}} />
                             <InputForm type="text" id="SA3" label={SQ3} control={control} rules={{required: "This field is required"}} />
