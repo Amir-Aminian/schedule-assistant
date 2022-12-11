@@ -46,7 +46,7 @@ const SignUp = () => {
                             <Grid item>
                                 <p>Select and answer three security questions. These questions will help us verify your identity should you forget your password.</p>
                             </Grid>
-                            <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={400}>
+                            <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
                                 <DropDownForm id="SQ1" label={"Select first security question"} options={handleOptions(watch("SQ2"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} />
                                 <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} />
                                 <DropDownForm id="SQ2" label={"Select second security question"} options={handleOptions(watch("SQ1"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} />
