@@ -14,7 +14,7 @@ const DropDownForm = ({ id, label, options, control, rules }) => {
                         <InputLabel htmlFor={id+"Label"}>{label}</InputLabel>
                         <Select id={id} labelId={id+"Label"} label={label} onChange={onChange} value={value} error={!!error}>
                             {options.map((option) => (
-                                <MenuItem key={option + id} value={option}>{option}</MenuItem>
+                                <MenuItem key={option + id} value={option} sx={{whiteSpace:"unset"}}>{option}</MenuItem>
                             ))}
                         </Select>
                         <FormHelperText error>{error ? error.message : null}</FormHelperText>
