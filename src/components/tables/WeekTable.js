@@ -17,9 +17,9 @@ const WeekTable = ({year, month, weekDays}) => {
             </Grid>   
             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={1}>                                
                 {weekDays.map((weekDay) => (
-                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" justifyContent="center"> 
-                        <Grid item>                           
-                            <Card sx={{maxWidth:115}} align="center">
+                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center"> 
+                        <Grid item xs={1.5}>                           
+                            <Card align="center">
                                 <CardContent>
                                     <Typography variant="body1" borderBottom={1}>
                                         {weekDay.weekDay}
@@ -33,12 +33,12 @@ const WeekTable = ({year, month, weekDays}) => {
                                 </CardContent>
                             </Card>
                         </Grid>
-                        <Grid item>                                
+                        <Grid item xs={0.5}>                                
                             <IconButton onClick={() => {setDate([weekDay.weekDay, weekDay.weekDate, weekDay.weekMonth, year]);setOpen(true);}}>
                                 <AddCircleOutline />
                             </IconButton>
                         </Grid>  
-                        <Grid item>
+                        <Grid item xs={10}>
                             <GetTask date={[weekDay.weekDay, weekDay.weekDate, weekDay.weekMonth, year]} />
                         </Grid>                      
                     </Grid>
