@@ -1,4 +1,4 @@
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import InputForm from "../../../forms/InputForm";
 import { useForm } from "react-hook-form";
@@ -30,11 +30,20 @@ const UserSQ = ({SQ1, SQ2, SQ3}) => {
                 </Grid>
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
-                        <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
-                            <InputForm type="text" id="SA1" label={SQ1} control={control} rules={{required: "This field is required"}} />
-                            <InputForm type="text" id="SA2" label={SQ2} control={control} rules={{required: "This field is required"}} />
-                            <InputForm type="text" id="SA3" label={SQ3} control={control} rules={{required: "This field is required"}} />
+                        <Grid container item direction="column" spacing={2}>
                             <Grid item>
+                                <Typography>1. {SQ1}</Typography>
+                            </Grid>
+                            <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} />
+                            <Grid item>
+                                <Typography>2. {SQ2}</Typography>
+                            </Grid>
+                            <InputForm type="text" id="SA2" label="Answer second security question" control={control} rules={{required: "This field is required"}} />
+                            <Grid item>
+                                <Typography>3. {SQ3}</Typography>
+                            </Grid>
+                            <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} />
+                            <Grid container item justifyContent="center">
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>
                             <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
