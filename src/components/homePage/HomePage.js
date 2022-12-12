@@ -30,16 +30,16 @@ const HomePage = () => {
 
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
-            <Container maxWidth="lg" sx={{mt: 10 , mb: 5, backgroundColor: "white", borderRadius: "2%"}}>
-                <Grid container direction="row" alignItems="center" justifyContent="center" spacing={4}>
+            <Container maxWidth="lg" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "1%"}}>
+                <Grid container direction="row" alignItems="center" justifyContent="center" spacing={1}>
                     <Grid item>
-                        <Button onClick={previousWeek} variant="contained" size="small" sx={{mb: 4}}>Previous Week</Button>
+                        <Button onClick={previousWeek} variant="contained" size="small">Previous Week</Button>
                     </Grid>
                         <Grid item>
-                    <Button onClick={thisWeek} variant="contained" size="small" sx={{mb: 4}}>This Week</Button>
+                    <Button onClick={thisWeek} variant="contained" size="small">This Week</Button>
                         </Grid>
                     <Grid item>
-                        <Button onClick={nextWeek} variant="contained" size="small" sx={{mb: 4}}>Next Week</Button>
+                        <Button onClick={nextWeek} variant="contained" size="small">Next Week</Button>
                     </Grid>
                 </Grid>
                 <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDays={SetWeek(date).weekDays} />
