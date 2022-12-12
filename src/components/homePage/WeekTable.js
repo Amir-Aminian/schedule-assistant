@@ -1,8 +1,8 @@
 import { AddCircleOutline } from "@mui/icons-material";
-import { Card, CardContent, Container, Grid, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Card, CardContent, Grid, IconButton, Typography } from "@mui/material";
 import React, { useState } from "react";
 import GetTask from "../../utilities/GetTask";
-import PopupWindow from "../homePage/PopupWindow";
+import PopupWindow from "./PopupWindow";
 
 const WeekTable = ({year, month, weekDays}) => {
     const [open, setOpen] = useState(false);

@@ -2,7 +2,7 @@ import { Container, Button, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SetWeek from "../../utilities/SetWeek";
-import WeekTable from "../tables/WeekTable";
+import WeekTable from "./WeekTable";
 
 const HomePage = () => {
     const navigate = useNavigate();
