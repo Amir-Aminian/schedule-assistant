@@ -3,7 +3,6 @@ import { Card, CardContent, Container, Grid, IconButton, Table, TableBody, Table
 import React, { useState } from "react";
 import GetTask from "../../utilities/GetTask";
 import PopupWindow from "../homePage/PopupWindow";
-import CollapsibleTable from "./CollapsibleTable";
 
 const WeekTable = ({year, month, weekDays}) => {
     const [open, setOpen] = useState(false);
