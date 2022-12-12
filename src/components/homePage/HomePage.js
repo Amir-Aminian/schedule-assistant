@@ -30,7 +30,7 @@ const HomePage = () => {
 
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
-            <Container maxWidth="md" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "1%"}}>
+            <Container maxWidth="lg" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "1%"}}>
                 <Grid container direction="column" alignItems="center" justifyContent="center" spacing={1}>
                     <Grid container item direction="row" alignItems="center" justifyContent="center" spacing={0.34}>
                         <Grid item>
