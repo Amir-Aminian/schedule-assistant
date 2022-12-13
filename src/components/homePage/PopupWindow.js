@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, Chip, Fab, Modal, Typography } from "@mui/material";
+import { Avatar, Badge, Button, Chip, Container, Fab, Grid, Modal, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SetTask from "../../utilities/SetTask";
 import InputForm from "../../forms/InputForm";
@@ -19,26 +19,14 @@ const PopupWindow = ({open, onClose, date}) => {
         if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
             window.location.reload();
         };
-    };
-
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: "30%",
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-      };     
+    };     
       
     return (
-        <Modal open={open} onClose={onClose}>
-            <Box sx={style}>            
+        <Modal open={open} onClose={onClose} sx={{overflow:"scroll"}}>            
+            <Container maxWidth="xs" sx={{mt: 2, mb: 2, backgroundColor: "white", borderRadius: "1%"}}>            
                 <form onSubmit={handleSubmit(submit)}>
                     <Stack direction="column" spacing={2}>
-                        <Avatar sx={{backgroundColor:"rgb(0, 114, 181)"}}></Avatar>
+                        <Avatar sx={{backgroundColor:"rgb(0, 114, 181)", mt: 2}}></Avatar>
                         <Chip label={user} variant="outlined" sx={{width:"30%"}} />
                         <Stack direction="row" spacing={1}>
                             <DateRange />
@@ -55,15 +43,17 @@ const PopupWindow = ({open, onClose, date}) => {
                             </Badge>                         
                         </Stack>
                         <Stack direction="row" spacing={2}>
-                            <Fab onClick={() => {setColor("rgb(66, 133, 244)"); setColorLabel("Blue")}} size="small" sx={{backgroundColor:"rgb(66, 133, 244)"}} />
-                            <Fab onClick={() => {setColor("rgb(219, 68, 55)"); setColorLabel("Red")}} size="small" sx={{backgroundColor:"rgb(219, 68, 55)"}} />
-                            <Fab onClick={() => {setColor("rgb(244, 180, 0)"); setColorLabel("Yellow")}} size="small" sx={{backgroundColor:"rgb(244, 180, 0)"}} />
-                            <Fab onClick={() => {setColor("rgb(15, 157, 88)"); setColorLabel("Green")}} size="small" sx={{backgroundColor:"rgb(15, 157, 88)"}} />
+                            <Fab onClick={() => {setColor("rgb(66, 133, 244)"); setColorLabel("Blue")}} size="small" sx={{backgroundColor:"rgb(66, 133, 244)", ":hover":{backgroundColor:"rgb(66, 133, 244)"}}} />
+                            <Fab onClick={() => {setColor("rgb(219, 68, 55)"); setColorLabel("Red")}} size="small" sx={{backgroundColor:"rgb(219, 68, 55)", ":hover":{backgroundColor:"rgb(219, 68, 55)"}}} />
+                            <Fab onClick={() => {setColor("rgb(244, 180, 0)"); setColorLabel("Yellow")}} size="small" sx={{backgroundColor:"rgb(244, 180, 0)", ":hover":{backgroundColor:"rgb(244, 180, 0)"}}} />
+                            <Fab onClick={() => {setColor("rgb(15, 157, 88)"); setColorLabel("Green")}} size="small" sx={{backgroundColor:"rgb(15, 157, 88)", ":hover":{backgroundColor:"rgb(15, 157, 88)"}}} />
                         </Stack>
-                        <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Done</Button>
+                        <Grid container justifyContent="center">
+                            <Button type="submit" variant="contained" size="large" sx={{mb:2}}>Done</Button>
+                        </Grid>
                     </Stack>
                 </form>
-            </Box>
+            </Container>
         </Modal>
     );
 }
