@@ -16,7 +16,7 @@ const WeekTable = ({year, month, weekDays}) => {
             </Grid>   
             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={1} sx={{mb: 2}}>                                
                 {weekDays.map((weekDay) => (
-                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center"> 
+                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" sx={{borderBottom:1}}> 
                         <Grid item xs={4.5} sm={2.2} md={1.5} lg={1.3}>                           
                             <Card align="center">
                                 <CardContent>
