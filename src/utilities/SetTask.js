@@ -38,11 +38,15 @@ const SetTask = (userTask) => {
     
     if (conflict != 0) {
         alert("You cannot add this task due to a time conflict with another task.");
-        conflict = 0
+        conflict = 0;
     } else {
-        usersTasks.push(userTask);
+        if (userTask.task.startTime===userTask.task.endTime) {
+            alert("Task cannot start and end at the same exact time.");
+        } else {
+            usersTasks.push(userTask);
         localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
         return(true);
+        };        
     };
 }
 
