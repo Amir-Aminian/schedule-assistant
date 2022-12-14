@@ -14,7 +14,7 @@ const TimeDiff = (startTime, endTime) => {
 
     if (startHour > endHour) {
         return(true);
-    } else if (startHour === endHour) {
+    } else if (startHour == endHour) {
         if (startMinute > endMinute) {
             return(true);
         } else {
