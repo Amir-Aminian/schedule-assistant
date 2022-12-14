@@ -6,7 +6,7 @@ import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { useState } from "react";
 
-const PopupWindow = ({open, onClose, date}) => {
+const PopupWindow = ({open, setOpen, date}) => {
     const user = localStorage.getItem("userName");
     
     const {control, reset, handleSubmit} = useForm();
@@ -18,11 +18,12 @@ const PopupWindow = ({open, onClose, date}) => {
     const submit = (data) => {
         if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
             reset();
+            setOpen(false)
         };
     };     
       
     return (
-        <Modal open={open} onClose={onClose} sx={{overflow:"scroll"}}>            
+        <Modal open={open} onClose={() => setOpen(false)} sx={{overflow:"scroll"}}>            
             <Container maxWidth="xs" sx={{mt: 2, mb: 2, backgroundColor: "white", borderRadius: "1%"}}>            
                 <form onSubmit={handleSubmit(submit)}>
                     <Stack direction="column" spacing={2}>

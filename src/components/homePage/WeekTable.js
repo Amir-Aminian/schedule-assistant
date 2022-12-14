@@ -43,7 +43,7 @@ const WeekTable = ({year, month, weekDays}) => {
                     </Grid>
                 ))}
             </Grid> 
-            <PopupWindow open={open} onClose={() => setOpen(false)} date={date} />
+            <PopupWindow open={open} setOpen={setOpen} date={date} />
         </Grid>
     );
 }
