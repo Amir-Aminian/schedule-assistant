@@ -12,8 +12,8 @@ const DayBarChart = ({dayTasks}) => {
     };
 
     return (
-        <Box>
-            <Box>
+        <Box sx={{overflowX:"scroll", overflowY:"hidden"}}>
+            <Box width={2300}>
                 <Bar
                     data={{
                         datasets:
@@ -38,7 +38,7 @@ const DayBarChart = ({dayTasks}) => {
                                 min:"00:00",
                                 max:"24:00",
                                 time:{
-                                    unit:"hour",
+                                    unit:"minute",
                                     displayFormats:{hour:"ha"}
                             }
                             }, 
