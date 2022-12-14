@@ -1,22 +1,28 @@
 const TimeDiff = (startTime, endTime) => {
-    let joined;
-    const splited = endTime.split(":");
-    let minute = splited[1]-15;
-    let hour = splited[0];
+    const splitedStartTime = startTime.split(":");
+    let startHour = splitedStartTime[0];
+    let startMinute = splitedStartTime[1];
 
-    if (minute<0) {
-        minute = 60 + minute;
-        hour = hour - 1;
-        joined = [hour, minute].join(":");
-    } else {
-        joined = [hour, minute].join(":");
+    const splitedEndTime = endTime.split(":");   
+    let endHour = splitedEndTime[0]; 
+    let endMinute = splitedEndTime[1]-15;   
+
+    if (endMinute<0) {
+        endMinute = 60 + endMinute;
+        endHour = endHour - 1;
     };
 
-    if (joined < startTime) {
+    if (startHour > endHour) {
         return(true);
+    } else if (startHour === endHour) {
+        if (startMinute > endMinute) {
+            return(true);
+        } else {
+            return(false);
+        };        
     } else {
         return(false);
-    }
+    };
 };
 
 export default TimeDiff;
