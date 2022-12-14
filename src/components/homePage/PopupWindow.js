@@ -9,7 +9,7 @@ import { useState } from "react";
 const PopupWindow = ({open, onClose, date}) => {
     const user = localStorage.getItem("userName");
     
-    const {control, handleSubmit} = useForm();
+    const {control, reset, handleSubmit} = useForm();
 
     const[color, setColor] = useState("rgb(66, 133, 244)");
 
@@ -17,7 +17,7 @@ const PopupWindow = ({open, onClose, date}) => {
 
     const submit = (data) => {
         if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
-            window.location.reload();
+            reset();
         };
     };     
       
