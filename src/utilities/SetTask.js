@@ -1,4 +1,4 @@
-import TimeDiff from "../utilities/TimeDiff";
+import TimeLimit from "../utilities/TimeLimit";
 
 const SetTask = (userTask) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
@@ -14,7 +14,7 @@ const SetTask = (userTask) => {
         return(false);
     };
 
-    if (TimeDiff(userTask.task.startTime, userTask.task.endTime)) {
+    if (TimeLimit(userTask.task.startTime, userTask.task.endTime)) {
         alert("Task duration should at least be 15 minutes.");
         return(false);
     };

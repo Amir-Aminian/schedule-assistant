@@ -1,4 +1,4 @@
-const TimeDiff = (startTime, endTime) => {
+const TimeLimit = (startTime, endTime) => {
     const splitedStartTime = startTime.split(":");
     let startHour = splitedStartTime[0];
     let startMinute = splitedStartTime[1];
@@ -25,4 +25,4 @@ const TimeDiff = (startTime, endTime) => {
     };
 };
 
-export default TimeDiff;
+export default TimeLimit;
