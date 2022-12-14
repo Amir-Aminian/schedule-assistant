@@ -1,3 +1,5 @@
+import TimeDiff from "../utilities/TimeDiff";
+
 const SetTask = (userTask) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
     let user = [];
@@ -9,6 +11,11 @@ const SetTask = (userTask) => {
         return(false);
     } else if (userTask.task.startTime === userTask.task.endTime) {
         alert("Task cannot start and end at the same exact time.");
+        return(false);
+    };
+
+    if (TimeDiff) {
+        alert("Task duration should at least be 15 minutes.");
         return(false);
     };
 
