@@ -4,6 +4,14 @@ const SetTask = (userTask) => {
     let date = [];    
     let conflict = 0;
 
+    if (userTask.task.startTime > userTask.task.endTime) {
+        alert("Task cannot end earlier than start time.");
+        return(false);
+    } else if (userTask.task.startTime === userTask.task.endTime) {
+        alert("Task cannot start and end at the same exact time.");
+        return(false);
+    };
+
     usersTasks.forEach((data) => {
         if (data.user===userTask.user) {
             user.push(data);
@@ -40,13 +48,9 @@ const SetTask = (userTask) => {
         alert("You cannot add this task due to a time conflict with another task.");
         conflict = 0;
     } else {
-        if (userTask.task.startTime===userTask.task.endTime) {
-            alert("Task cannot start and end at the same exact time.");
-        } else {
-            usersTasks.push(userTask);
+        usersTasks.push(userTask);
         localStorage.setItem("usersTasks", JSON.stringify(usersTasks));
-        return(true);
-        };        
+        return(true);        
     };
 }
 
