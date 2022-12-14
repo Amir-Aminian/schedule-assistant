@@ -1,8 +1,8 @@
 const TimeDiff = (startTime, endTime) => {
     let joined;
     const splited = endTime.split(":");
-    let minute = splited[2]-15;
-    let hour = splited[1];
+    let minute = splited[1]-15;
+    let hour = splited[0];
 
     if (minute<0) {
         minute = 60 + minute;
