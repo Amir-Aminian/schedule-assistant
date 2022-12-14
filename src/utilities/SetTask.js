@@ -14,7 +14,7 @@ const SetTask = (userTask) => {
         return(false);
     };
 
-    if (TimeDiff) {
+    if (TimeDiff(userTask.task.startTime, userTask.task.endTime)) {
         alert("Task duration should at least be 15 minutes.");
         return(false);
     };
