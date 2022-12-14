@@ -12,7 +12,6 @@ const DayBarChart = ({dayTasks}) => {
 
     return (
         <Bar
-            height={"50%"}
             data={{
                 datasets:
                     dayTasks.map((data) =>( 
@@ -21,10 +20,11 @@ const DayBarChart = ({dayTasks}) => {
             }} 
             options={{
                 onClick:(e, element) => clickHandler(e, element),
+                maintainAspectRatio:false,
                 indexAxis:"y",
                 borderSkipped:false,
                 borderRadius:"5", 
-                barPercentage:"0.5", 
+                barPercentage:"0.2", 
                 plugins:{
                     legend:{display:false},
                     tooltip:{enabled:false}                    
