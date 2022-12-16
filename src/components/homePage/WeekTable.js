@@ -10,7 +10,7 @@ const WeekTable = ({year, month, weekDays, scrollToDate}) => {
     const [date, setDate] = useState([]);
 
     const today = (weekDay) => {
-        if ((new Date().getDate() === weekDay.weekDate) && (new Date().getMonth() === weekDay.monthNumber) && (new Date().getFullYear === weekDay.yearNumber)) {
+        if ((new Date().getDate() === weekDay.weekDate) && (new Date().getMonth() === weekDay.monthNumber) && (new Date().getFullYear() === weekDay.yearNumber)) {
             return(scrollToDate);
         } else {
             return(null);
