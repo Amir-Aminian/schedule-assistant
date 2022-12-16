@@ -49,8 +49,13 @@ const PopupWindow = ({open, setOpen, date}) => {
                             <Fab onClick={() => {setColor("rgb(244, 180, 0)"); setColorLabel("Yellow")}} size="small" sx={{backgroundColor:"rgb(244, 180, 0)", ":hover":{backgroundColor:"rgb(244, 180, 0)"}}} />
                             <Fab onClick={() => {setColor("rgb(15, 157, 88)"); setColorLabel("Green")}} size="small" sx={{backgroundColor:"rgb(15, 157, 88)", ":hover":{backgroundColor:"rgb(15, 157, 88)"}}} />
                         </Stack>
-                        <Grid container justifyContent="center">
-                            <Button type="submit" variant="contained" size="large" sx={{mb:2}}>Done</Button>
+                        <Grid container direction="row" justifyContent="center">
+                            <Grid item>
+                                <Button type="button" onClick={() => setOpen(false)} variant="contained" size="large" sx={{mb:2, mr:4}}>Close</Button>
+                            </Grid>
+                            <Grid item>
+                                <Button type="submit" variant="contained" size="large" sx={{mb:2, ml:4}}>Save</Button>
+                            </Grid>
                         </Grid>
                     </Stack>
                 </form>
