@@ -1,5 +1,5 @@
-import { Block, LogoutOutlined } from "@mui/icons-material";
-import { Container, Button, Grid } from "@mui/material";
+import { LogoutOutlined } from "@mui/icons-material";
+import { Container, Button, Grid, IconButton } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SetWeek from "../../utilities/SetWeek";
@@ -42,9 +42,9 @@ const HomePage = () => {
             <Container maxWidth="lg" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "0.5%"}}>
                 <Grid container direction="column" alignItems="center" justifyContent="center" spacing={1}>
                     <Grid container item justifyContent="right">
-                        <Button type="button" onClick={() => {localStorage.removeItem("userEmail"); localStorage.removeItem("userName"); navigate("/")}} size="large">
+                        <IconButton onClick={() => {localStorage.removeItem("userEmail"); localStorage.removeItem("userName"); navigate("/")}}>
                             <LogoutOutlined />
-                        </Button> 
+                        </IconButton> 
                     </Grid>               
                     <Grid container item direction="row" alignItems="center" justifyContent="center" spacing={0.34}>
                         <Grid item>
