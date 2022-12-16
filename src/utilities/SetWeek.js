@@ -36,7 +36,7 @@ const SetWeek = (d) => {
     for (let i = startIndex; i <= endIndex; i++) {
         let weekDate = new Date(d);
         let month = months[new Date(weekDate.setDate(i)).getMonth()];
-        weekDays.push({weekDate: new Date(weekDate.setDate(i)).getDate(), weekDay: days[i-startIndex], weekMonth: month});
+        weekDays.push({weekDate: new Date(weekDate.setDate(i)).getDate(), weekDay: days[i-startIndex], weekMonth: month, monthNumber: new Date(weekDate.setDate(i)).getMonth(), yearNumber: new Date(weekDate.setDate(i)).getFullYear()});
     };
     
     return({year: year, month: month, weekDays: weekDays});

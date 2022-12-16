@@ -1,11 +1,13 @@
-import { LogoutOutlined } from "@mui/icons-material";
+import { Block, LogoutOutlined } from "@mui/icons-material";
 import { Container, Button, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SetWeek from "../../utilities/SetWeek";
 import WeekTable from "./WeekTable";
 
 const HomePage = () => {
+    const scrollToDate = useRef();
+
     const navigate = useNavigate();
 
     const [date, setDate] = useState(new Date());
@@ -29,6 +31,12 @@ const HomePage = () => {
         }
     }, []);
 
+    useEffect(() => {
+        if (scrollToDate.current!=undefined) {
+            scrollToDate.current.scrollIntoView({block:"center", behavior:"smooth"});
+        }
+    }, [date]);  
+
     if (localStorage.getItem("userEmail")!=undefined) {
         return (
             <Container maxWidth="lg" sx={{mt: 5 , mb: 5, backgroundColor: "white", borderRadius: "0.5%"}}>
@@ -49,7 +57,7 @@ const HomePage = () => {
                             <Button onClick={nextWeek} variant="contained" size="small">Next Week</Button>
                         </Grid>
                     </Grid>
-                    <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDays={SetWeek(date).weekDays} />
+                    <WeekTable year={SetWeek(date).year} month={SetWeek(date).month} weekDays={SetWeek(date).weekDays} scrollToDate={scrollToDate} />
                 </Grid>
             </Container>
         );

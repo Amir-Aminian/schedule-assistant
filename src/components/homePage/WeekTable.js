@@ -4,10 +4,18 @@ import React, { useState } from "react";
 import GetTask from "../../utilities/GetTask";
 import PopupWindow from "./PopupWindow";
 
-const WeekTable = ({year, month, weekDays}) => {
+const WeekTable = ({year, month, weekDays, scrollToDate}) => {
     const [open, setOpen] = useState(false);
 
     const [date, setDate] = useState([]);
+
+    const today = (weekDay) => {
+        if ((new Date().getDate() === weekDay.weekDate) && (new Date().getMonth() === weekDay.monthNumber) && (new Date().getFullYear === weekDay.yearNumber)) {
+            return(scrollToDate);
+        } else {
+            return(null);
+        };
+    };
 
     return (
         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
@@ -16,7 +24,7 @@ const WeekTable = ({year, month, weekDays}) => {
             </Grid>   
             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={1} sx={{mb: 2}}>                                
                 {weekDays.map((weekDay) => (
-                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" sx={{borderBottom:1}}> 
+                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" sx={{borderBottom:1}} ref={today(weekDay)}> 
                         <Grid item xs={4.5} sm={2.2} md={1.5} lg={1.3}>                           
                             <Card align="center">
                                 <CardContent>
