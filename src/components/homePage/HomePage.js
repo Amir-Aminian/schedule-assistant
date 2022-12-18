@@ -10,14 +10,14 @@ const HomePage = () => {
 
     const navigate = useNavigate();
 
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(new Date(new Date().setDate(new Date().getDate()-1)));
 
     const nextWeek = () => {
         setDate(new Date(date.setDate(date.getDate()+7)));
     };
 
     const thisWeek = () => {
-        setDate(new Date());
+        setDate(new Date(new Date().setDate(new Date().getDate()-1)));
     };
 
     const previousWeek = () => {
