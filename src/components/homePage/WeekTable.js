@@ -9,6 +9,14 @@ const WeekTable = ({year, month, weekDays, scrollToDate}) => {
 
     const [date, setDate] = useState([]);
 
+    const style = (weekDay) => {
+        if ((new Date().getDate() === weekDay.weekDate) && (new Date().getMonth() === weekDay.monthNumber) && (new Date().getFullYear() === weekDay.yearNumber)) {
+            return({border:5, borderColor:"rgb(46 182 125)"});
+        } else {
+            return({borderBottom:1});
+        };
+    };
+
     const today = (weekDay) => {
         if ((new Date().getDate() === weekDay.weekDate) && (new Date().getMonth() === weekDay.monthNumber) && (new Date().getFullYear() === weekDay.yearNumber)) {
             return(scrollToDate);
@@ -24,7 +32,7 @@ const WeekTable = ({year, month, weekDays, scrollToDate}) => {
             </Grid>   
             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={1} sx={{mb: 2}}>                                
                 {weekDays.map((weekDay) => (
-                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" sx={{borderBottom:1}} ref={today(weekDay)}> 
+                    <Grid container item key={weekDay.weekDate} direction="row" alignItems="center" sx={style(weekDay)} ref={today(weekDay)}> 
                         <Grid item xs={4.5} sm={2.2} md={1.5} lg={1.3}>                           
                             <Card align="center">
                                 <CardContent>
