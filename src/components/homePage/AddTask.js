@@ -16,7 +16,7 @@ const AddTask = ({open, setOpen, date}) => {
     const[colorLabel, setColorLabel] = useState("Blue");
 
     const submit = (data) => {
-        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
+        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color, colorLabel:colorLabel})) {
             reset();
             setOpen(false)
         };

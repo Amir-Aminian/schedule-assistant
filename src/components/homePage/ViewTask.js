@@ -4,24 +4,29 @@ import SetTask from "../../utilities/SetTask";
 import InputForm from "../../forms/InputForm";
 import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const ViewTask = ({open, setOpen, date, task}) => {
+const ViewTask = ({open, setOpen, date, task, color, colorLabel}) => {
     const user = localStorage.getItem("userName");
     
     const {control, reset, handleSubmit} = useForm();
 
-    const[color, setColor] = useState("rgb(66, 133, 244)");
+    const[newColor, setNewColor] = useState(color);
 
-    const[colorLabel, setColorLabel] = useState("Blue");
+    const[newColorLabel, setNewColorLabel] = useState(colorLabel);
+
+    useEffect(() => {
+        setNewColor(color);
+        setNewColorLabel(colorLabel);
+    }, [color, colorLabel]);
 
     const submit = (data) => {
-        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color})) {
+        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:newColor, colorLabel:newColorLabel})) {
             reset();
             setOpen(false)
         };
     };     
-      
+    
     return (
         <Modal open={open} onClose={() => setOpen(false)} sx={{overflow:"scroll"}}>            
             <Container maxWidth="xs" sx={{mt: 2, mb: 2, backgroundColor: "white", borderRadius: "1%"}}>            
@@ -39,15 +44,15 @@ const ViewTask = ({open, setOpen, date, task}) => {
                         <InputForm type="text" id="taskDescription" label="Task Description" control={control} rules={{required: "This field is required"}} defaultValue={task.taskDescription} />
                         <Stack direction="row" spacing={2}>
                             <Typography>Pick a color for this task:</Typography>
-                            <Badge badgeContent="" sx={{"& .MuiBadge-badge":{backgroundColor:color}}}>
-                                <Chip label={colorLabel} />  
+                            <Badge badgeContent="" sx={{"& .MuiBadge-badge":{backgroundColor:newColor}}}>
+                                <Chip label={newColorLabel} />  
                             </Badge>                         
                         </Stack>
                         <Stack direction="row" spacing={2}>
-                            <Fab onClick={() => {setColor("rgb(66, 133, 244)"); setColorLabel("Blue")}} size="small" sx={{backgroundColor:"rgb(66, 133, 244)", ":hover":{backgroundColor:"rgb(66, 133, 244)"}}} />
-                            <Fab onClick={() => {setColor("rgb(219, 68, 55)"); setColorLabel("Red")}} size="small" sx={{backgroundColor:"rgb(219, 68, 55)", ":hover":{backgroundColor:"rgb(219, 68, 55)"}}} />
-                            <Fab onClick={() => {setColor("rgb(244, 180, 0)"); setColorLabel("Yellow")}} size="small" sx={{backgroundColor:"rgb(244, 180, 0)", ":hover":{backgroundColor:"rgb(244, 180, 0)"}}} />
-                            <Fab onClick={() => {setColor("rgb(15, 157, 88)"); setColorLabel("Green")}} size="small" sx={{backgroundColor:"rgb(15, 157, 88)", ":hover":{backgroundColor:"rgb(15, 157, 88)"}}} />
+                            <Fab onClick={() => {setNewColor("rgb(66, 133, 244)"); setNewColorLabel("Blue")}} size="small" sx={{backgroundColor:"rgb(66, 133, 244)", ":hover":{backgroundColor:"rgb(66, 133, 244)"}}} />
+                            <Fab onClick={() => {setNewColor("rgb(219, 68, 55)"); setNewColorLabel("Red")}} size="small" sx={{backgroundColor:"rgb(219, 68, 55)", ":hover":{backgroundColor:"rgb(219, 68, 55)"}}} />
+                            <Fab onClick={() => {setNewColor("rgb(244, 180, 0)"); setNewColorLabel("Yellow")}} size="small" sx={{backgroundColor:"rgb(244, 180, 0)", ":hover":{backgroundColor:"rgb(244, 180, 0)"}}} />
+                            <Fab onClick={() => {setNewColor("rgb(15, 157, 88)"); setNewColorLabel("Green")}} size="small" sx={{backgroundColor:"rgb(15, 157, 88)", ":hover":{backgroundColor:"rgb(15, 157, 88)"}}} />
                         </Stack>
                         <Grid container direction="row" justifyContent="center">
                             <Grid item>
