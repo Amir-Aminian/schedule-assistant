@@ -9,9 +9,12 @@ import { useState } from "react";
 const DayBarChart = ({dayTasks, date}) => {
     const [open, setOpen] = useState(false);
 
+    const [task, setTask] = useState({});
+
     const clickHandler = (e, element) => {
         if (element.length>0) {
             setOpen(true);
+            setTask(dayTasks[element[0].datasetIndex].task);
         };
     };
 
@@ -57,7 +60,7 @@ const DayBarChart = ({dayTasks, date}) => {
                     }}
                 />
             </Box>
-            <ViewTask open={open} setOpen={setOpen} date={date} />
+            <ViewTask open={open} setOpen={setOpen} date={date} task={task} />
         </Box>
     );
 }

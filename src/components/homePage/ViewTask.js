@@ -6,7 +6,7 @@ import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { useState } from "react";
 
-const ViewTask = ({open, setOpen, date}) => {
+const ViewTask = ({open, setOpen, date, task}) => {
     const user = localStorage.getItem("userName");
     
     const {control, reset, handleSubmit} = useForm();
@@ -33,10 +33,10 @@ const ViewTask = ({open, setOpen, date}) => {
                             <DateRange />
                             <Typography>{date[0]}, {date[1]} {date[2]} {date[3]}</Typography>
                         </Stack>                    
-                        <InputForm type="text" id="taskTitle" label="Task Title" control={control} rules={{required: "This field is required"}} />
-                        <InputForm type="time" id="startTime" label="Task Start Time" control={control} rules={{required: "This field is required"}} />
-                        <InputForm type="time" id="endTime" label="Task End Time" control={control} rules={{required: "This field is required"}} />
-                        <InputForm type="text" id="taskDescription" label="Task Description" control={control} rules={{required: "This field is required"}} />
+                        <InputForm type="text" id="taskTitle" label="Task Title" control={control} rules={{required: "This field is required"}} defaultValue={task.taskTitle} />
+                        <InputForm type="time" id="startTime" label="Task Start Time" control={control} rules={{required: "This field is required"}} defaultValue={task.startTime} />
+                        <InputForm type="time" id="endTime" label="Task End Time" control={control} rules={{required: "This field is required"}} defaultValue={task.endTime} />
+                        <InputForm type="text" id="taskDescription" label="Task Description" control={control} rules={{required: "This field is required"}} defaultValue={task.taskDescription} />
                         <Stack direction="row" spacing={2}>
                             <Typography>Pick a color for this task:</Typography>
                             <Badge badgeContent="" sx={{"& .MuiBadge-badge":{backgroundColor:color}}}>
