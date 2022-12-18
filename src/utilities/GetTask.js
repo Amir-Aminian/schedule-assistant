@@ -11,7 +11,7 @@ const GetTask = ({date}) => {
     });
 
     return (
-        <DayBarChart dayTasks={dayTasks} />
+        <DayBarChart dayTasks={dayTasks} date={date} />
     );
 }
 

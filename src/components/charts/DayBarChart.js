@@ -3,11 +3,15 @@ import {chart as chartjs} from "chart.js/auto"
 import {Chart} from 'chart.js';
 import 'chartjs-adapter-luxon';
 import { Box } from "@mui/material";
+import ViewTask from "../homePage/ViewTask";
+import { useState } from "react";
 
-const DayBarChart = ({dayTasks}) => {
+const DayBarChart = ({dayTasks, date}) => {
+    const [open, setOpen] = useState(false);
+
     const clickHandler = (e, element) => {
         if (element.length>0) {
-            alert("Hello!")
+            setOpen(true);
         };
     };
 
@@ -53,6 +57,7 @@ const DayBarChart = ({dayTasks}) => {
                     }}
                 />
             </Box>
+            <ViewTask open={open} setOpen={setOpen} date={date} />
         </Box>
     );
 }
