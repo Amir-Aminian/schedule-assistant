@@ -28,7 +28,7 @@ const ViewTask = ({open, setOpen, date, task, color, colorLabel}) => {
     };     
     
     return (
-        <Modal open={open} onClose={() => setOpen(false)} sx={{overflow:"scroll"}}>            
+        <Modal open={open} onClose={() => {setOpen(false); reset(); setNewColor(color); setNewColorLabel(colorLabel);}} sx={{overflow:"scroll"}}>            
             <Container maxWidth="xs" sx={{mt: 2, mb: 2, backgroundColor: "white", borderRadius: "1%"}}>            
                 <form onSubmit={handleSubmit(submit)}>
                     <Stack direction="column" spacing={2}>
@@ -56,7 +56,7 @@ const ViewTask = ({open, setOpen, date, task, color, colorLabel}) => {
                         </Stack>
                         <Grid container direction="row" justifyContent="center">
                             <Grid item>
-                                <Button type="button" onClick={() => setOpen(false)} variant="contained" size="large" sx={{mb:2, mr:4}}>Close</Button>
+                                <Button type="button" onClick={() => {setOpen(false); reset(); setNewColor(color); setNewColorLabel(colorLabel);}} variant="contained" size="large" sx={{mb:2, mr:4}}>Close</Button>
                             </Grid>
                             <Grid item>
                                 <Button type="submit" variant="contained" size="large" sx={{mb:2, ml:4}}>Save</Button>
