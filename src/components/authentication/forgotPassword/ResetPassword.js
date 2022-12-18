@@ -31,8 +31,8 @@ const ResetPassword = () => {
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
-                            <InputForm type="password" id="newPassword" label="New Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}}} />
-                            <InputForm type="password" id="confirmNewPassword" label="Confirm New Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("newPassword") || "Password does not match")}} />
+                            <InputForm type="password" id="newPassword" label="New Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}}} defaultValue={""} />
+                            <InputForm type="password" id="confirmNewPassword" label="Confirm New Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("newPassword") || "Password does not match")}} defaultValue={""} />
                             <Grid item>
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>

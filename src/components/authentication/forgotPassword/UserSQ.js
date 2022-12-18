@@ -34,15 +34,15 @@ const UserSQ = ({SQ1, SQ2, SQ3}) => {
                             <Grid item>
                                 <Typography>1. {SQ1}</Typography>
                             </Grid>
-                            <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                             <Grid item>
                                 <Typography>2. {SQ2}</Typography>
                             </Grid>
-                            <InputForm type="text" id="SA2" label="Answer second security question" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="text" id="SA2" label="Answer second security question" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                             <Grid item>
                                 <Typography>3. {SQ3}</Typography>
                             </Grid>
-                            <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                             <Grid container item justifyContent="center">
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>

@@ -34,7 +34,7 @@ const UserEmail = () => {
                 <Grid item>
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
-                            <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} />
+                            <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                             <Grid item>
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>

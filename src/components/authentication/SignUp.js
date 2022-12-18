@@ -35,10 +35,10 @@ const SignUp = () => {
                     <form onSubmit={handleSubmit(submit)}>
                         <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
                             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2} width={250}>
-                                <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} />
-                                <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} />
-                                <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}}} />
-                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("password") || "Password does not match")}} />
+                                <InputForm type="text" id="username" label="Username" control={control} rules={{required: "This field is required"}} defaultValue={""} />
+                                <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} defaultValue={""} />
+                                <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}}} defaultValue={""} />
+                                <InputForm type="password" id="confirmPassword" label="Confirm Password" control={control} rules={{required: "This field is required", minLength: {value: 8, message: "Password must have at least 8 characters"}, validate: (value) => (value===watch("password") || "Password does not match")}} defaultValue={""} />
                             </Grid>
                             <Grid item>
                                 <h3>Security Questions</h3>
@@ -47,11 +47,11 @@ const SignUp = () => {
                                 <p>Select and answer three security questions. These questions will help us verify your identity should you forget your password.</p>
                             </Grid>
                             <Grid container item direction="column" alignItems="center" justifyContent="center" spacing={2}>
-                                <DropDownForm id="SQ1" label={"Select first security question"} options={handleOptions(watch("SQ2"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} />
+                                <DropDownForm id="SQ1" label={"Select first security question"} options={handleOptions(watch("SQ2"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <InputForm type="text" id="SA1" label="Answer first security question" control={control} rules={{required: "This field is required"}} />
-                                <DropDownForm id="SQ2" label={"Select second security question"} options={handleOptions(watch("SQ1"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} />
+                                <DropDownForm id="SQ2" label={"Select second security question"} options={handleOptions(watch("SQ1"),watch("SQ3"))} control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <InputForm type="text" id="SA2" label="Answer second security question" control={control} rules={{required: "This field is required"}} />
-                                <DropDownForm id="SQ3" label={"Select third security question"} options={handleOptions(watch("SQ1"),watch("SQ2"))} control={control} rules={{required: "This field is required"}} />
+                                <DropDownForm id="SQ3" label={"Select third security question"} options={handleOptions(watch("SQ1"),watch("SQ2"))} control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} />
                                 <Grid container item justifyContent="flex-end">
                                     <Link to={"/"}>Already have an account? Sign In</Link>
