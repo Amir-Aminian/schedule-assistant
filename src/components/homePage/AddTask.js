@@ -6,7 +6,7 @@ import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { useState } from "react";
 
-const PopupWindow = ({open, setOpen, date}) => {
+const AddTask = ({open, setOpen, date}) => {
     const user = localStorage.getItem("userName");
     
     const {control, reset, handleSubmit} = useForm();
@@ -64,4 +64,4 @@ const PopupWindow = ({open, setOpen, date}) => {
     );
 }
 
-export default PopupWindow;
+export default AddTask;

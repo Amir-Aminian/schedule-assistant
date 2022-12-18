@@ -2,7 +2,7 @@ import { AddCircleOutline } from "@mui/icons-material";
 import { Card, CardContent, Grid, IconButton, Typography } from "@mui/material";
 import React, { useState } from "react";
 import GetTask from "../../utilities/GetTask";
-import PopupWindow from "./PopupWindow";
+import AddTask from "./AddTask";
 
 const WeekTable = ({year, month, weekDays, scrollToDate}) => {
     const [open, setOpen] = useState(false);
@@ -59,7 +59,7 @@ const WeekTable = ({year, month, weekDays, scrollToDate}) => {
                     </Grid>
                 ))}
             </Grid> 
-            <PopupWindow open={open} setOpen={setOpen} date={date} />
+            <AddTask open={open} setOpen={setOpen} date={date} />
         </Grid>
     );
 }
