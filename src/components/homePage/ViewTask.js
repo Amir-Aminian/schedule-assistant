@@ -57,13 +57,13 @@ const ViewTask = ({open, setOpen, date, task, color, colorLabel, id}) => {
                         </Stack>
                         <Grid container direction="row" justifyContent="center">
                             <Grid item>
-                                <Button type="button" onClick={() => {setOpen(false); reset(); setNewColor(color); setNewColorLabel(colorLabel);}} variant="contained" size="large" sx={{mb:2, mr:4}}>Close</Button>
+                                <Button type="button" onClick={() => {setOpen(false); reset(); setNewColor(color); setNewColorLabel(colorLabel);}} variant="contained" size="large" sx={{mb:2, mr:2}}>Close</Button>
                             </Grid>
                             <Grid item>
                                 <Button type="button" onClick={() => {DeleteTask(id); setOpen(false)}} variant="contained" size="large" sx={{mb:2}}>Delete</Button>
                             </Grid>
                             <Grid item>
-                                <Button type="submit" variant="contained" size="large" sx={{mb:2, ml:4}}>Update</Button>
+                                <Button type="submit" variant="contained" size="large" sx={{mb:2, ml:2}}>Update</Button>
                             </Grid>
                         </Grid>
                     </Stack>
