@@ -5,8 +5,9 @@ import 'chartjs-adapter-luxon';
 import { Box } from "@mui/material";
 import ViewTask from "../homePage/ViewTask";
 import { useState } from "react";
+import GetTask from "../../utilities/GetTask";
 
-const DayBarChart = ({dayTasks, date}) => {
+const DayBarChart = ({date}) => {
     const [open, setOpen] = useState(false);
 
     const [task, setTask] = useState({});
@@ -16,6 +17,8 @@ const DayBarChart = ({dayTasks, date}) => {
     const [colorLabel, setColorLabel] = useState();
 
     const [id, setId] = useState();
+
+    const dayTasks = GetTask(date);
 
     const clickHandler = (e, element) => {
         if (element.length>0) {

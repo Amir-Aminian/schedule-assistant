@@ -1,6 +1,4 @@
-import DayBarChart from "../components/charts/DayBarChart";
-
-const GetTask = ({date}) => {
+const GetTask = (date) => {
     let usersTasks=JSON.parse(localStorage.getItem("usersTasks")) || [];
     let dayTasks= [];
 
@@ -10,9 +8,7 @@ const GetTask = ({date}) => {
         }
     });
 
-    return (
-        <DayBarChart dayTasks={dayTasks} date={date} />
-    );
+    return (dayTasks);
 }
 
 export default GetTask;
