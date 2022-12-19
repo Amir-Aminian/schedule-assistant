@@ -5,6 +5,7 @@ import InputForm from "../../forms/InputForm";
 import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = ({open, setOpen, date}) => {
     const user = localStorage.getItem("userName");
@@ -15,8 +16,10 @@ const AddTask = ({open, setOpen, date}) => {
 
     const[colorLabel, setColorLabel] = useState("Blue");
 
+    let taskuuid = uuidv4();
+
     const submit = (data) => {
-        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color, colorLabel:colorLabel})) {
+        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:color, colorLabel:colorLabel, id:taskuuid})) {
             reset();
             setOpen(false)
         };
