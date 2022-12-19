@@ -15,12 +15,15 @@ const DayBarChart = ({dayTasks, date}) => {
 
     const [colorLabel, setColorLabel] = useState();
 
+    const [id, setId] = useState();
+
     const clickHandler = (e, element) => {
         if (element.length>0) {
             setOpen(true);
             setTask(dayTasks[element[0].datasetIndex].task);
             setColor(dayTasks[element[0].datasetIndex].color);
             setColorLabel(dayTasks[element[0].datasetIndex].colorLabel);
+            setId(dayTasks[element[0].datasetIndex].id)
         };
     };
 
@@ -66,7 +69,7 @@ const DayBarChart = ({dayTasks, date}) => {
                     }}
                 />
             </Box>
-            <ViewTask open={open} setOpen={setOpen} date={date} task={task} color={color} colorLabel={colorLabel} />
+            <ViewTask open={open} setOpen={setOpen} date={date} task={task} color={color} colorLabel={colorLabel} id={id} />
         </Box>
     );
 }
