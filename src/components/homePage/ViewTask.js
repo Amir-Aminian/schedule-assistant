@@ -22,7 +22,7 @@ const ViewTask = ({open, setOpen, date, task, color, colorLabel, id}) => {
     }, [color, colorLabel]);
 
     const submit = (data) => {
-        if (UpdateTask(id, {user: user, date: new Date(date).getTime(), task: data, color:newColor, colorLabel:newColorLabel})) {
+        if (UpdateTask(id, {user: user, date: new Date(date).getTime(), task: data, color:newColor, colorLabel:newColorLabel, id:id})) {
             reset();
             setOpen(false)
         };
