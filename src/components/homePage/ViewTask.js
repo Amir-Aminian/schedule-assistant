@@ -1,11 +1,11 @@
 import { Avatar, Badge, Button, Chip, Container, Fab, Grid, Modal, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import SetTask from "../../utilities/SetTask";
 import InputForm from "../../forms/InputForm";
 import { DateRange } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { useEffect, useState } from "react";
 import DeleteTask from "../../utilities/DeleteTask";
+import UpdateTask from "../../utilities/UpdateTask";
 
 const ViewTask = ({open, setOpen, date, task, color, colorLabel, id}) => {
     const user = localStorage.getItem("userName");
@@ -22,7 +22,7 @@ const ViewTask = ({open, setOpen, date, task, color, colorLabel, id}) => {
     }, [color, colorLabel]);
 
     const submit = (data) => {
-        if (SetTask({user: user, date: new Date(date).getTime(), task: data, color:newColor, colorLabel:newColorLabel})) {
+        if (UpdateTask(id, {user: user, date: new Date(date).getTime(), task: data, color:newColor, colorLabel:newColorLabel})) {
             reset();
             setOpen(false)
         };
