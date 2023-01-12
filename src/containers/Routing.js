@@ -9,9 +9,9 @@ const Routing = () => {
       <BrowserRouter>
         <Routes>        
           <Route path="/schedule-assistant" element={<SignIn />} />
-          <Route path="signUp" element={<SignUp />} />
-          <Route path="forgotPassword" element={<ForgotPassword />} />
-          <Route path="homePage" element={<HomePage />} />
+          <Route path="/schedule-assistant/signUp" element={<SignUp />} />
+          <Route path="/schedule-assistant/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/schedule-assistant/homePage" element={<HomePage />} />
           <Route path="*" element={<h1>ERROR 404</h1>} />
         </Routes>
       </BrowserRouter>

@@ -17,7 +17,7 @@ const SignIn = () => {
     
     useEffect(() => {
         if (localStorage.getItem("userEmail")!=undefined) {
-            navigate("homePage");
+            navigate("/schedule-assistant/homePage");
         }
     }, []);
 
@@ -35,7 +35,7 @@ const SignIn = () => {
                                 <InputForm type="email" id="email" label="Email Address" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <InputForm type="password" id="password" label="Password" control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <Grid container item justifyContent="flex-end">
-                                    <Link to={"/forgotPassword"}>Forgot Your Password?</Link>
+                                    <Link to={"/schedule-assistant/forgotPassword"}>Forgot Your Password?</Link>
                                 </Grid>
                                 <Grid item>
                                     <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Sign In</Button>

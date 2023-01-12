@@ -27,7 +27,7 @@ const HomePage = () => {
     useEffect(() => {
         if (localStorage.getItem("userEmail")==undefined) {
             alert("You are not signed in");
-            navigate("/");
+            navigate("/schedule-assistant");
         }
     }, []);
 
