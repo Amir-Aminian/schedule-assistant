@@ -16,7 +16,7 @@ const SignUp = () => {
 
     const submit = (data) => {
         Register(data);
-        navigate("/schedule-assitant");
+        navigate("/schedule-assistant");
     };
 
     const handleOptions = (value1, value2) => {
