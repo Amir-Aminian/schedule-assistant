@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/schedule-assistant/static/js/main.ca0e7026.js",
+    "static/js/787.243dca65.chunk.js": "/schedule-assistant/static/js/787.243dca65.chunk.js",
+    "index.html": "/schedule-assistant/index.html",
+    "main.ca0e7026.js.map": "/schedule-assistant/static/js/main.ca0e7026.js.map",
+    "787.243dca65.chunk.js.map": "/schedule-assistant/static/js/787.243dca65.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ca0e7026.js"
+  ]
+}
