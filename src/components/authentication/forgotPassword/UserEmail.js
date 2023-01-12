@@ -39,7 +39,7 @@ const UserEmail = () => {
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>
                             <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
-                                <Link to={"/"}>Back to Sign In page</Link>
+                                <Link to={"/schedule-assistant"}>Back to Sign In page</Link>
                             </Grid>
                         </Grid>
                     </form>

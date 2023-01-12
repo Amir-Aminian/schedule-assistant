@@ -8,7 +8,7 @@ const Routing = () => {
   return (
       <BrowserRouter>
         <Routes>        
-          <Route path="/" element={<SignIn />} />
+          <Route path="/schedule-assistant" element={<SignIn />} />
           <Route path="signUp" element={<SignUp />} />
           <Route path="forgotPassword" element={<ForgotPassword />} />
           <Route path="homePage" element={<HomePage />} />

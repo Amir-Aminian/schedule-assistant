@@ -15,7 +15,7 @@ const ResetPassword = () => {
     
     const submit = (data) => {
         ResetUserPassword(userEmail, data.newPassword);
-        navigate("/");
+        navigate("/schedule-assistant");
         setSA(false);
     };
 
@@ -37,7 +37,7 @@ const ResetPassword = () => {
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>
                             <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
-                                <Link to={"/"} onClick={() => setSA(false)}>Back to Sign In page</Link>
+                                <Link to={"/schedule-assistant"} onClick={() => setSA(false)}>Back to Sign In page</Link>
                             </Grid>
                         </Grid>
                     </form>

@@ -16,7 +16,7 @@ const SignUp = () => {
 
     const submit = (data) => {
         Register(data);
-        navigate("/");
+        navigate("/schedule-assitant");
     };
 
     const handleOptions = (value1, value2) => {
@@ -54,7 +54,7 @@ const SignUp = () => {
                                 <DropDownForm id="SQ3" label={"Select third security question"} options={handleOptions(watch("SQ1"),watch("SQ2"))} control={control} rules={{required: "This field is required"}} defaultValue={""} />
                                 <InputForm type="text" id="SA3" label="Answer third security question" control={control} rules={{required: "This field is required"}} />
                                 <Grid container item justifyContent="flex-end">
-                                    <Link to={"/"}>Already have an account? Sign In</Link>
+                                    <Link to={"/schedule-assistant"}>Already have an account? Sign In</Link>
                                 </Grid>
                                 <Grid item>
                                     <Button type="submit" variant="contained" size="small" sx={{mb: 4}}>Sign Up</Button>

@@ -47,7 +47,7 @@ const UserSQ = ({SQ1, SQ2, SQ3}) => {
                                 <Button type="submit" variant="contained" size="small">Submit</Button>
                             </Grid>
                             <Grid container item justifyContent="flex-end" sx={{mb: 4}}>
-                                <Link to={"/"} onClick={() => setSQ(undefined)}>Back to Sign In page</Link>
+                                <Link to={"/schedule-assistant"} onClick={() => setSQ(undefined)}>Back to Sign In page</Link>
                             </Grid>
                         </Grid>
                     </form>
