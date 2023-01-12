@@ -14,4 +14,4 @@
     
 - ## Built with:
 
-    JavaScript, HTML and CSS
+    React, JavaScript, Material UI, Chart.js, React Hook Form, HTML and CSS
