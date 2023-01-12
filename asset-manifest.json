@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/schedule-assistant/static/js/main.df9d1f51.js",
+    "main.js": "/schedule-assistant/static/js/main.cb960bc5.js",
     "static/js/787.243dca65.chunk.js": "/schedule-assistant/static/js/787.243dca65.chunk.js",
     "index.html": "/schedule-assistant/index.html",
-    "main.df9d1f51.js.map": "/schedule-assistant/static/js/main.df9d1f51.js.map",
+    "main.cb960bc5.js.map": "/schedule-assistant/static/js/main.cb960bc5.js.map",
     "787.243dca65.chunk.js.map": "/schedule-assistant/static/js/787.243dca65.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.df9d1f51.js"
+    "static/js/main.cb960bc5.js"
   ]
 }
