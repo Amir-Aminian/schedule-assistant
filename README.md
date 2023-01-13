@@ -6,7 +6,7 @@
 
 - ## Why did I make it?
 
-    I often face the problem of managing my schedule. I have to go through a couple of calendars, my to-do list for the day, and sometimes my emails to find a time for a new task. So I came up with the idea to have all daily tasks in one place. And give it a perspective by showing the duration of each task throughout the day. That was how I decided to build a simple schedule assistant.
+    I often have to go through a couple of calendars, my to-do list for the day, and sometimes my emails to find a free time for a new task. So I came up with the idea to have all daily tasks in one place. And give it a perspective by showing the duration of each task throughout the day. That was how I decided to build a simple schedule assistant.
     
 - ## What is next?
 
